@@ -5,17 +5,31 @@ public class tablero_Script : MonoBehaviour
 {
 
     // Use this for initialization
-    public const int AZUL = 1;
-    public const int ROJO = 2;
-    public const int VERDE = 3;
-    public const int MORADO = 4;
+    public const int AZUL = 1;//#0000FF
+    public const int ROJO = 2;//#FF0000
+    public const int VERDE = 3;//#00FF00
+    public const int MORADO = 4;//#FABADA
     public const int PUNTOS = 20;
     //tablero =0 -> vacio 
     int[,] tablero = new int[25, 25];
+    [SerializeField]
+    private GameObject ciudad;
+
+    [SerializeField]
+    private Material material1;
+    [SerializeField]
+    private Material material2;
+    [SerializeField]
+    private Material material3;
+    [SerializeField]
+    private Material material4;
+
+
     void Start()
     {
         //inicializacion de las variables
         //cada ciudad se corresponde con un numero
+        graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
         inicializarTablero();
 
@@ -25,7 +39,7 @@ public class tablero_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Object test1 = Instantiate(ciudad, new Vector3(0, 0, 0), new Quaternion());
     }
 
     private void inicializarTablero()
@@ -42,6 +56,16 @@ public class tablero_Script : MonoBehaviour
         tablero[tablero.Length, 0] = ROJO;
         tablero[0, tablero.Length] = VERDE;
         tablero[tablero.Length, tablero.Length] = MORADO;
+    }
+
+    private void graficosIni()
+    {
+        GameObject test1 = (GameObject)Instantiate(ciudad, new Vector3(0, 0, 0), new Quaternion());
+        test1.GetComponent<Renderer>().material.color=material1.color;
+        Debug.Log("test1 con color");
+        GameObject test2 = (GameObject)Instantiate(ciudad, new Vector3(25, 0, 0), new Quaternion());
+        test2.GetComponent<Renderer>().material.color = material2.color;
+        Debug.Log("test2 con color");
     }
 
     private class Ciudad
