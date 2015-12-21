@@ -10,63 +10,118 @@ public class tablero_Script : MonoBehaviour
     public const int VERDE = 3;//#00FF00
     public const int MORADO = 4;//#FABADA
     public const int PUNTOS = 20;
+    public const int TAMAÑO = 25;  
+    public Color colorAzul = new Color(0F, 0F, 1.0F, 1.0F);
+    public Color colorRojo = new Color(1.0F, 0F, 0F, 1.0F);
+    public Color colorVerde = new Color(0F, 1.0F, 0F, 1.0F);
+    public Color colorFabada = new Color(0.9765625F, 0.7265625F, 0.8515625F, 1.0F);
+    public Ciudad[] arr_ciudades = new Ciudad[64];
+
     //tablero =0 -> vacio 
-    int[,] tablero = new int[25, 25];
+    int[,] tablero = new int[TAMAÑO, TAMAÑO];
+    GameObject[,] tableroGrafico = new GameObject[TAMAÑO, TAMAÑO];
     [SerializeField]
     private GameObject ciudad;
-
-    [SerializeField]
-    private Material material1;
-    [SerializeField]
-    private Material material2;
-    [SerializeField]
-    private Material material3;
-    [SerializeField]
-    private Material material4;
-
 
     void Start()
     {
         //inicializacion de las variables
         //cada ciudad se corresponde con un numero
+        for (int i = 0; i < arr_ciudades.Length; i++)
+        {
+            arr_ciudades[i] = new Ciudad();
+        }
+           
+        inicializarTablero();
+        Debug.Log(tablero.Length);
         graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
-        inicializarTablero();
-
-
+        actualizarGraficos();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Object test1 = Instantiate(ciudad, new Vector3(0, 0, 0), new Quaternion());
+        for (int i = 0; i < 4; i++) {
+            ejecutarcombate(arr_ciudades[i]);
+        }
+
+
+            actualizarGraficos();
     }
 
     private void inicializarTablero()
     {
-        for (int i = 0; i < tablero.Length; i++)
+
+        for (int i = 0; i < TAMAÑO; i++)
         {
-            for (int j = 0; j < tablero.Length; j++)
+            for (int j = 0; j < TAMAÑO; j++)
             {
                 tablero[i, j] = 0;
             }
         }
 
         tablero[0, 0] = AZUL;
-        tablero[tablero.Length, 0] = ROJO;
-        tablero[0, tablero.Length] = VERDE;
-        tablero[tablero.Length, tablero.Length] = MORADO;
+        tablero[TAMAÑO-1, 0] = ROJO;
+        tablero[0, TAMAÑO-1] = VERDE;
+        tablero[TAMAÑO - 1, TAMAÑO-1] = MORADO;
     }
 
     private void graficosIni()
     {
+        for (int i = 0; i < TAMAÑO; i++)
+        {
+            for (int j = 0; j < TAMAÑO; j++)
+            {
+                tableroGrafico[i, j] = (GameObject)Instantiate(ciudad, new Vector3(3 * i, 0, 3 * j), new Quaternion());
+            }
+        }
+
+        /*
         GameObject test1 = (GameObject)Instantiate(ciudad, new Vector3(0, 0, 0), new Quaternion());
-        test1.GetComponent<Renderer>().material.color=material1.color;
+        test1.GetComponent<Renderer>().material.color=color4;
         Debug.Log("test1 con color");
         GameObject test2 = (GameObject)Instantiate(ciudad, new Vector3(25, 0, 0), new Quaternion());
-        test2.GetComponent<Renderer>().material.color = material2.color;
-        Debug.Log("test2 con color");
+        test2.GetComponent<Renderer>().material.color = color4;
+        Debug.Log("test2 con color"); Debug.Log(tablero.Length);
+         */
     }
+    private void actualizarGraficos() 
+    {
+        for (int i = 0; i < TAMAÑO; i++)
+        {
+            for (int j = 0; j < TAMAÑO; j++)
+            {
+                pintarCuadro(i, j);
+            }
+        }
+    }
+
+    private void pintarCuadro(int i, int j)
+    {
+        int aux = tablero[i, j];
+        Color color=new Color(1,1,1,1);
+        switch (aux)
+        {
+            case 1:
+                color = colorAzul;
+                break;
+            case 2:
+                color = colorRojo;
+                break;
+            case 3:
+                color = colorVerde;
+                break;
+            case 4:
+                color = colorFabada;
+                break;
+        }
+        
+        tableroGrafico[i, j].GetComponent<Renderer>().material.color = color;
+    }
+
+
+
 
     private class Ciudad
     {
