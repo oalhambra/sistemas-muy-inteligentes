@@ -43,7 +43,7 @@ public class tablero_Script : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < 4; i++) {
-            ejecutarcombate(arr_ciudades[i]);
+            //ejecutarcombate(arr_ciudades[i]);
         }
 
 
@@ -123,7 +123,7 @@ public class tablero_Script : MonoBehaviour
 
 
 
-    private class Ciudad
+    public class Ciudad
     {
         int color;
         int[] stats = new int[PUNTOS];
