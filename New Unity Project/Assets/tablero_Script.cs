@@ -73,7 +73,7 @@ public class tablero_Script : MonoBehaviour
         {
             for (int j = 0; j < TAMAÑO; j++)
             {
-                tableroGrafico[i, j] = (GameObject)Instantiate(ciudad, new Vector3(3 * i, 0, 3 * j), new Quaternion());
+                tableroGrafico[i, j] = (GameObject)Instantiate(ciudad, new Vector3(5 * i, 0, 5 * j), new Quaternion());
             }
         }
 
@@ -116,8 +116,18 @@ public class tablero_Script : MonoBehaviour
                 color = colorFabada;
                 break;
         }
-        
+
         tableroGrafico[i, j].GetComponent<Renderer>().material.color = color;
+        /*
+        Material aux2 = new Material("");
+        aux2.color = color;
+        Material[] materiales=tableroGrafico[i, j].GetComponents<Material>();
+
+        foreach(Material a in materiales)
+        {
+            a.SetColor("", color);
+        }
+        //tableroGrafico[i, j].;*/
     }
 
 
