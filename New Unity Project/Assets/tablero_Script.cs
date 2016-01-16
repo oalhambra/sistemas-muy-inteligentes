@@ -16,12 +16,14 @@ public class tablero_Script : MonoBehaviour
     public Color colorVerde = new Color(0F, 1.0F, 0F, 1.0F);
     public Color colorFabada = new Color(0.9765625F, 0.7265625F, 0.8515625F, 1.0F);
     public Ciudad[] arr_ciudades = new Ciudad[64];
+    public Combate combate;
 
     //tablero =0 -> vacio 
-    int[,] tablero = new int[TAMAÑO, TAMAÑO];
+    
     GameObject[,] tableroGrafico = new GameObject[TAMAÑO, TAMAÑO];
     [SerializeField]
     private GameObject ciudad;
+    private int estado;
 
     void Start()
     {
@@ -32,8 +34,8 @@ public class tablero_Script : MonoBehaviour
             arr_ciudades[i] = new Ciudad();
         }
            
-        inicializarTablero();
-        Debug.Log(tablero.Length);
+        combate.inicializarTablero();
+        //Debug.Log(tablero.Length);
         graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
         actualizarGraficos();
@@ -42,30 +44,45 @@ public class tablero_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //estado 1, combatiendo
+        if (estado == 1)
+        {
+            combate.ejecutarCombate();
+        }
+        //estado 2, transicion entre combates
+        if (estado == 2)
+        {
+            //despejar el tablero
+
+            //reinicializar combate con nuevas ciudades de arr_ciudades
+
+        }
+        //estado 3, reproduccion
+        if (estado == 3)
+        {
+            //seleccionar pareja a reproducir en funcion de fitness
+
+            //ejecutar reproduccion
+
+        }
+
+
+        
+        
+        
+        
+        
+        
+        /*
         for (int i = 0; i < 4; i++) {
             //ejecutarcombate(arr_ciudades[i]);
         }
 
 
-            actualizarGraficos();
+            actualizarGraficos();*/
     }
 
-    private void inicializarTablero()
-    {
-
-        for (int i = 0; i < TAMAÑO; i++)
-        {
-            for (int j = 0; j < TAMAÑO; j++)
-            {
-                tablero[i, j] = 0;
-            }
-        }
-
-        tablero[0, 0] = AZUL;
-        tablero[TAMAÑO-1, 0] = ROJO;
-        tablero[0, TAMAÑO-1] = VERDE;
-        tablero[TAMAÑO - 1, TAMAÑO-1] = MORADO;
-    }
+    
 
     private void graficosIni()
     {
@@ -99,6 +116,7 @@ public class tablero_Script : MonoBehaviour
 
     private void pintarCuadro(int i, int j)
     {
+        int[,] tablero = combate.getTablero();
         int aux = tablero[i, j];
         Color color=new Color(1,1,1,1);
         switch (aux)
@@ -180,6 +198,50 @@ public class tablero_Script : MonoBehaviour
             }
 
             return new Ciudad(stats);
+        }
+    }
+    public class Combate
+    {
+        Ciudad[] ciudades =new Ciudad[4];
+        int[,] tablero = new int[TAMAÑO, TAMAÑO];
+
+        public Combate(Ciudad[] ciudades)
+        {
+            this.ciudades = ciudades;
+            inicializarTablero();
+        }
+        public void ejecutarCombate()
+        {
+            foreach(Ciudad ciudad in ciudades)
+            {
+                ejecutarTurno(ciudad);
+            }
+            
+        }
+        private void ejecutarTurno(Ciudad ciudad)
+        {
+
+        }
+        public int[,] getTablero()
+        {
+            return tablero;
+        }
+        public void inicializarTablero()
+        {
+
+
+            for (int i = 0; i < TAMAÑO; i++)
+            {
+                for (int j = 0; j < TAMAÑO; j++)
+                {
+                    tablero[i, j] = 0;
+                }
+            }
+
+            tablero[0, 0] = AZUL;
+            tablero[TAMAÑO - 1, 0] = ROJO;
+            tablero[0, TAMAÑO - 1] = VERDE;
+            tablero[TAMAÑO - 1, TAMAÑO - 1] = MORADO;
         }
     }
 }
