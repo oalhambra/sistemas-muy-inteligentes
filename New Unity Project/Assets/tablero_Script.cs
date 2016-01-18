@@ -233,8 +233,48 @@ public class tablero_Script : MonoBehaviour
             //seleccionar una
             //si es expansion libre, exito=true
             //si es combate, realizar combate y aplicar valor a exito
+            /*
+            // movimientosPosibles valors: 0 -> no se puede llegar. 1 -> vacio. 2 -> Ciudad enemiga
+            int[,] movimientosPosibles = new int[TAMAÑO, TAMAÑO];
 
-
+            // Crear funcion ponerCosoACeros si eso
+            for (int i = 0; i < TAMAÑO; i++)
+            {
+                for (int j = 0; j < TAMAÑO; j++)
+                {
+                    movimientosPosibles[i, j] = 0;
+                }
+            }
+            
+            for (int i = 0; i < TAMAÑO; i++)
+            {
+                for (int j = 0; j < TAMAÑO; j++)
+                {
+                  // TODO: Este color hay que inicializarlo
+                    if (tablero[i,j] == this.color)
+                    {
+                        // Sacar esto a una funcion para comprobar los 4 casos, cada uno con una llamada
+                        // Le pasamos el movimientosPosibles y que lo devuelva modificado, a no ser que 
+                        // consigamos pasarle un puntero
+                        int iAEvaluar = i + 1;
+                        int jAEvaluar = j;
+                        if (TAMAÑO > iAEvaluar && iAEvaluar >= 0 && TAMAÑO > jAEvaluar && jAEvaluar >= 0 && tablero[iAEvaluar, jAEvaluar] != ciudad.color)
+                        {
+                            if (tablero[iAEvaluar, jAEvaluar] == 0)
+                            {
+                                movimientosPosibles[iAEvaluar, jAEvaluar] = 1;
+                            }
+                            else
+                            {
+                                movimientosPosibles[iAEvaluar, jAEvaluar] = 2;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Falta elegir una random
+            */
             if (exito)
             {
                 tamaño++;
