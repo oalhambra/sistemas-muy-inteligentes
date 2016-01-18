@@ -31,7 +31,8 @@ public class tablero_Script : MonoBehaviour {
         for (int i = 0; i < arr_ciudades.Length; i++) {
             arr_ciudades[i] = new Ciudad();
         }
-        combate = new Combate(arr_ciudades[0], arr_ciudades[0], arr_ciudades[0], arr_ciudades[0]);
+        
+        combate = new Combate(arr_ciudades[0], arr_ciudades[1], arr_ciudades[2], arr_ciudades[3]);
         graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
         actualizarGraficos();
@@ -205,6 +206,7 @@ public class tablero_Script : MonoBehaviour {
         public void setTamaño(int tamaño) {
             this.tamaño = tamaño;
         }
+       
 
         public tableroYBool expandir(int[,] tablero)//devuelve true si se expande correctamente, false en caso contrario, incrementa el tamaño
         {
@@ -242,7 +244,7 @@ public class tablero_Script : MonoBehaviour {
             Coordenadas[] arrLibres = posicionesCoincidentes(1, movimientosPosibles);
             Coordenadas[] arrOcupadas = posicionesCoincidentes(2, movimientosPosibles);
             // Falta elegir una random
-            if (arrLibres != null) {
+            if (arrLibres.Length > 0) {
                 // Se puede hacer un movimiento a un espacio libre
                 Debug.Log("Hay una opcion de desplazamiento. La long del arrLibres es " + arrLibres.Length);
                 //seleccionar posicion a random
@@ -316,6 +318,9 @@ public class tablero_Script : MonoBehaviour {
         public void setColor(int color) {
             this.color = color;
         }
+        public int getColor() {
+            return this.color;
+        }
     }
 
 
@@ -344,13 +349,13 @@ public class tablero_Script : MonoBehaviour {
 
         }
         public void ejecutarCombate() {
-            Debug.Log("2");
+            Debug.Log("Ejecuta turno la ciudad del color " + ciudad1.getColor());
             ciudad1 = ejecutarTurno(ciudad1);
-            Debug.Log("3");
+            Debug.Log("Ejecuta turno la ciudad del color " + ciudad2.getColor());
             ciudad2 = ejecutarTurno(ciudad2);
-            Debug.Log("4");
+            Debug.Log("Ejecuta turno la ciudad del color " + ciudad3.getColor());
             ciudad3 = ejecutarTurno(ciudad3);
-            Debug.Log("5");
+            Debug.Log("Ejecuta turno la ciudad del color " + ciudad4.getColor());
             ciudad4 = ejecutarTurno(ciudad4);
             Debug.Log("6");
 
