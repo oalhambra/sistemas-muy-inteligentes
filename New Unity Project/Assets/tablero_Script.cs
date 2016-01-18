@@ -242,7 +242,7 @@ public class tablero_Script : MonoBehaviour {
             Coordenadas[] arrLibres = posicionesCoincidentes(1, movimientosPosibles);
             Coordenadas[] arrOcupadas = posicionesCoincidentes(2, movimientosPosibles);
             // Falta elegir una random
-            if (arrLibres != null) {
+            if (arrLibres.Length > 0) {
                 // Se puede hacer un movimiento a un espacio libre
                 Debug.Log("Hay una opcion de desplazamiento. La long del arrLibres es " + arrLibres.Length);
                 //seleccionar posicion a random
