@@ -18,6 +18,7 @@ public class tablero_Script : MonoBehaviour
     public Ciudad[] arr_ciudades = new Ciudad[64];
     public Combate combate;
 
+
     //tablero =0 -> vacio 
 
     GameObject[,] tableroGrafico = new GameObject[TAMAÑO, TAMAÑO];
@@ -33,27 +34,33 @@ public class tablero_Script : MonoBehaviour
         {
             arr_ciudades[i] = new Ciudad();
         }
-
+        combate = new Combate(arr_ciudades[0], arr_ciudades[0], arr_ciudades[0], arr_ciudades[0]);
         combate.inicializarTablero();
         //Debug.Log(tablero.Length);
         graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
         actualizarGraficos();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //estado 1, combatiendo
         if (estado == 1)
         {
+            Debug.Log("1");
             combate.ejecutarCombate();
+            Debug.Log("hola holita");
+            //estado = 3;
         }
         //estado 2, transicion entre combates
         if (estado == 2)
         {
             //despejar el tablero
-
+            Debug.Log("estado 2");
+            estado = 1;
             //reinicializar combate con nuevas ciudades de arr_ciudades
 
         }
@@ -65,6 +72,11 @@ public class tablero_Script : MonoBehaviour
             //ejecutar reproduccion
 
         }
+        if (estado == 0)
+        {
+            Debug.Log("estado 0");
+            estado = 2;
+        }
 
 
 
@@ -72,7 +84,7 @@ public class tablero_Script : MonoBehaviour
 
 
 
-
+        actualizarGraficos();
         /*
         for (int i = 0; i < 4; i++) {
             //ejecutarcombate(arr_ciudades[i]);
@@ -225,7 +237,8 @@ public class tablero_Script : MonoBehaviour
         {
             this.tamaño = tamaño;
         }
-        public void expandir()//devuelve true si se expande correctamente, false en caso contrario, incrementa el tamaño
+
+        public tableroYBool expandir(int[,] tablero)//devuelve true si se expande correctamente, false en caso contrario, incrementa el tamaño
         {
             bool exito = false;
             //obtener listado de posiciones posibles para la expansion
@@ -233,7 +246,7 @@ public class tablero_Script : MonoBehaviour
             //seleccionar una
             //si es expansion libre, exito=true
             //si es combate, realizar combate y aplicar valor a exito
-            /*
+
             // movimientosPosibles valors: 0 -> no se puede llegar. 1 -> vacio. 2 -> Ciudad enemiga
             int[,] movimientosPosibles = new int[TAMAÑO, TAMAÑO];
 
@@ -245,40 +258,83 @@ public class tablero_Script : MonoBehaviour
                     movimientosPosibles[i, j] = 0;
                 }
             }
-            
             for (int i = 0; i < TAMAÑO; i++)
             {
                 for (int j = 0; j < TAMAÑO; j++)
                 {
-                  // TODO: Este color hay que inicializarlo
-                    if (tablero[i,j] == this.color)
+                    // TODO: Este color hay que inicializarlo
+                    if (tablero[i, j] == this.color)
                     {
                         // Sacar esto a una funcion para comprobar los 4 casos, cada uno con una llamada
                         // Le pasamos el movimientosPosibles y que lo devuelva modificado, a no ser que 
                         // consigamos pasarle un puntero
-                        int iAEvaluar = i + 1;
-                        int jAEvaluar = j;
-                        if (TAMAÑO > iAEvaluar && iAEvaluar >= 0 && TAMAÑO > jAEvaluar && jAEvaluar >= 0 && tablero[iAEvaluar, jAEvaluar] != ciudad.color)
-                        {
-                            if (tablero[iAEvaluar, jAEvaluar] == 0)
-                            {
-                                movimientosPosibles[iAEvaluar, jAEvaluar] = 1;
-                            }
-                            else
-                            {
-                                movimientosPosibles[iAEvaluar, jAEvaluar] = 2;
-                            }
-                        }
+                        movimientosPosibles = evaluarPosicion(tablero, i + 1, j, movimientosPosibles);
+                        movimientosPosibles = evaluarPosicion(tablero, i - 1, j, movimientosPosibles);
+                        movimientosPosibles = evaluarPosicion(tablero, i, j + 1, movimientosPosibles);
+                        movimientosPosibles = evaluarPosicion(tablero, i, j - 1, movimientosPosibles);
+
                     }
                 }
             }
-            
+            //hacemos una lista de posiciones libres y de posiciones ocupadas
+            Coordenadas[] arrLibres=posicionesCoincidentes(1, movimientosPosibles);
+            Coordenadas[] arrOcupadas = posicionesCoincidentes(2, movimientosPosibles);
             // Falta elegir una random
-            */
+            if (arrLibres == null)//solo queda combatir
+            {
+                //TODO seleccionar posicion de arrOcupadas a random
+                //TODO realizar combate
+            }
+            else if (arrOcupadas == null)//solo queda expandirse
+            {
+                //seleccionar posicion a random
+                exito = true;
+                Coordenadas posExpansion=arrLibres[Random.Range(0, arrLibres.Length)];
+                tablero[posExpansion.getI(), posExpansion.getJ()]=this.color;
+                
+            }
+
             if (exito)
             {
                 tamaño++;
             }
+
+
+            return new tableroYBool(tablero, exito);
+
+        }
+        //evalua si la posicion pasada es posible para la expansion y que tipo de expansion seria
+        private int[,] evaluarPosicion(int[,] tablero, int iAEvaluar, int jAEvaluar, int[,] movimientosPosibles)
+        {
+            if (TAMAÑO > iAEvaluar && iAEvaluar >= 0 && TAMAÑO > jAEvaluar && jAEvaluar >= 0 && tablero[iAEvaluar, jAEvaluar] != this.color)
+            {
+                if (tablero[iAEvaluar, jAEvaluar] == 0)
+                {
+                    movimientosPosibles[iAEvaluar, jAEvaluar] = 1;
+                }
+                else
+                {
+                    movimientosPosibles[iAEvaluar, jAEvaluar] = 2;
+                }
+            }
+            return movimientosPosibles;
+        }
+        private Coordenadas[] posicionesCoincidentes(int val, int[,] movimientosPosibles)
+        {
+            Coordenadas[] resultado = null;
+            Coordenadas aux;
+            for(int i=0;i< TAMAÑO; i++)
+            {
+                for(int j=0;j< TAMAÑO; j++)
+                {
+                    if (movimientosPosibles[i, j] == val)
+                    {
+                        aux = new Coordenadas(i, j);
+                        aux.concat(resultado);
+                    }
+                }
+            }
+            return resultado;
         }
         public int getCiudadanos()
         {
@@ -306,6 +362,10 @@ public class tablero_Script : MonoBehaviour
             }
             return militar;
         }
+        public void setColor(int color)
+        {
+            this.color = color;
+        }
     }
 
 
@@ -315,27 +375,41 @@ public class tablero_Script : MonoBehaviour
 
     public class Combate
     {
-        Ciudad[] ciudades = new Ciudad[4];
+
+        Ciudad ciudad1;
+        Ciudad ciudad2;
+        Ciudad ciudad3;
+        Ciudad ciudad4;
         int[,] tablero = new int[TAMAÑO, TAMAÑO];
 
-        public Combate(Ciudad[] ciudades)
+        public Combate(Ciudad ciudad1, Ciudad ciudad2, Ciudad ciudad3, Ciudad ciudad4)
         {
-            this.ciudades = ciudades;
+            this.ciudad1 = ciudad1;
+            prepararCiudad(ciudad1, AZUL);
+            this.ciudad2 = ciudad2;
+            prepararCiudad(ciudad2, ROJO);
+            this.ciudad3 = ciudad3;
+            prepararCiudad(ciudad3,VERDE);
+            this.ciudad4 = ciudad4;
+            prepararCiudad(ciudad4,MORADO);
             inicializarTablero();
-            foreach (Ciudad ciudad in ciudades)
-            {
-                prepararCiudad(ciudad);
-            }
+           
         }
         public void ejecutarCombate()
         {
-            foreach (Ciudad ciudad in ciudades)
-            {
-                ejecutarTurno(ciudad);
-            }
+            Debug.Log("2");
+            ciudad1=ejecutarTurno(ciudad1);
+            Debug.Log("3");
+            ciudad2 = ejecutarTurno(ciudad2);
+            Debug.Log("4");
+            ciudad3 = ejecutarTurno(ciudad3);
+            Debug.Log("5");
+            ciudad4 = ejecutarTurno(ciudad4);
+            Debug.Log("6");
+
 
         }
-        private void ejecutarTurno(Ciudad ciudad)
+        private Ciudad ejecutarTurno(Ciudad ciudad)
         {
             //comprobar si la ciudad sigue activa
             if (ciudad.getTamaño() != 0)
@@ -344,11 +418,20 @@ public class tablero_Script : MonoBehaviour
                 ciudad.setPoblacion(ciudad.getPoblacion() + 1 + ciudad.getCiudadanos());
                 ciudad.setEjercito(ciudad.getEjercito() + 1 + ciudad.getMilitar());
                 //comprueba expansion
-                while ((((ciudad.getPoblacion() / 5) + 1) - ciudad.getTamaño()) != 0)
-                {
-                    ciudad.expandir();
-                }
+                
+                //while ((((ciudad.getPoblacion() / 5) + 1) - ciudad.getTamaño()) != 0)
+                //{
+                    tableroYBool aux=ciudad.expandir(this.tablero);
+                    if (aux.getExito())
+                    {
+                        ciudad.setTamaño(ciudad.getTamaño() + 1);
+                    }
+                    tablero = aux.getTablero();
+                //}
+                
+                
             }
+            return ciudad;
 
 
         }
@@ -373,12 +456,75 @@ public class tablero_Script : MonoBehaviour
             tablero[0, TAMAÑO - 1] = VERDE;
             tablero[TAMAÑO - 1, TAMAÑO - 1] = MORADO;
         }
-        public void prepararCiudad(Ciudad ciudad)
+        public void prepararCiudad(Ciudad ciudad, int color)
         {
             ciudad.setEjercito(0);
             ciudad.setPoblacion(1);
             ciudad.setTamaño(1);
+            ciudad.setColor(color);
         }
 
     }
+
+    //////////////////////////////////////////////////////////////////////////
+
+    public class Coordenadas
+    {
+        int i;
+        int j;
+        public Coordenadas(int i, int j)
+        {
+            this.i = i;
+            this.j = j;
+        }
+        public int getI()
+        {
+            return i;
+        }
+        public int getJ()
+        {
+            return j;
+        }
+        public Coordenadas[] concat(Coordenadas[] aux)
+        {
+            if (aux != null)
+            {
+                Coordenadas[] devolver = new Coordenadas[aux.Length + 1];
+                for (int i = 0; i < aux.Length; i++)
+                {
+                    devolver[i] = aux[i];
+                }
+                devolver[devolver.Length - 1] = this;
+                return devolver;
+            }
+            else
+            {
+                Coordenadas[] devolver = { new Coordenadas(i, j) };
+                return devolver;
+            }
+            
+        }
+    }
+
+    /////////////////////////////////////////////
+    
+    public class tableroYBool
+    {
+        int[,] tablero;
+        bool exito;
+        public tableroYBool(int[,]tablero, bool exito)
+        {
+            this.tablero = tablero;
+            this.exito = exito;
+        }
+        public int[,] getTablero()
+        {
+            return tablero;
+        }
+        public bool getExito()
+        {
+            return exito;
+        }
+    }
+
 }
