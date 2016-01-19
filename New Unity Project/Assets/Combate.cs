@@ -43,6 +43,24 @@ public class Combate {
 
 
     }
+    public bool combateTerminado()
+        
+    {
+        bool resultado =true;
+        int[,] tabAux = tablero.getTablero();
+        int ciudad = tabAux[0,0];
+        for(int i = 0; i < Constants.TAMAÑO; i++)
+        {
+            for(int j = 0; j < Constants.TAMAÑO; j++)
+            {
+                if (tabAux[i, j] != ciudad)
+                {
+                    resultado = false;
+                }
+            }
+        }
+        return resultado;
+    }
 
 
 

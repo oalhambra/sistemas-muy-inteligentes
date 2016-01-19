@@ -107,6 +107,7 @@ public class Ciudad {
         if (valentia > Random.Range(0, 100)) {
             Debug.Log("Tenemos un valiente. Valentia: " + valentia);
             if (arrOcupadas.Length > 0) {
+
                 Coordenadas posExpansion = arrOcupadas[Random.Range(0, arrOcupadas.Length)];
                 Ciudad ciudadAtacada;
                 switch (tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()]) {
@@ -131,6 +132,7 @@ public class Ciudad {
                     //ganamos nosotros
                     tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()] = this.color;
                     ciudadAtacada.tamaño--;
+                    ciudadAtacada.setPoblacion(ciudadAtacada.getPoblacion() - 5);
                     exito = true;
                 }
                 else {
@@ -189,6 +191,7 @@ public class Ciudad {
                 if (this.tamaño + this.ejercito > ciudadAtacada.tamaño + ciudadAtacada.ejercito) {
                     //ganamos nosotros
                     tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()] = this.color;
+                    ciudadAtacada.setPoblacion(ciudadAtacada.getPoblacion() - 5);
                     ciudadAtacada.tamaño--;
                     exito = true;
                 }
@@ -237,6 +240,7 @@ public class Ciudad {
         }
         return resultado;
     }
+
     public int getCiudadanos() {
         int ciudadanos = 0;
 
@@ -284,4 +288,5 @@ public class Ciudad {
         }
         return granjas;
     }
+
 }

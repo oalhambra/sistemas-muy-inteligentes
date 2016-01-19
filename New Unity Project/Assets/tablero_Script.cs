@@ -20,6 +20,7 @@ public class tablero_Script : MonoBehaviour {
     [SerializeField]
     private GameObject ciudad;
     private int estado;
+    private int numCombate;
 
     void Start() {
         //inicializacion de las variables
@@ -29,6 +30,8 @@ public class tablero_Script : MonoBehaviour {
         }
 
         combate = new Combate(arr_ciudades[0], arr_ciudades[1], arr_ciudades[2], arr_ciudades[3]);
+        numCombate = 1;
+        estado = 1;
         graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
         actualizarGraficos();
@@ -40,8 +43,14 @@ public class tablero_Script : MonoBehaviour {
 
         //estado 1, combatiendo
         if (estado == 1) {
-           // Debug.Log("1");
+            // Debug.Log("1");
+
+            //ejecutarCombate nos devuelve true si solo queda una ciudad viva
             combate.ejecutarCombate();
+            if (combate.combateTerminado())
+            {
+                estado = 2;
+            }
             //Debug.Log("hola holita");
             //estado = 3;
         }
@@ -49,14 +58,24 @@ public class tablero_Script : MonoBehaviour {
         if (estado == 2) {
             //despejar el tablero
             //Debug.Log("estado 2");
-            estado = 1;
-            //reinicializar combate con nuevas ciudades de arr_ciudades
+            //graficosIni();
+            combate = new Combate(arr_ciudades[4*numCombate], arr_ciudades[4 * numCombate+1], arr_ciudades[4 * numCombate+2], arr_ciudades[4 * numCombate+3]);
+            numCombate++;
+            if (numCombate == 64 / 4)
+            {
+                estado = 3;
+            }
+            else
+            {
+                estado = 1;
+            }
+
 
         }
         //estado 3, reproduccion
         if (estado == 3) {
             //seleccionar pareja a reproducir en funcion de fitness
-
+            Debug.Log("toca reproducir");
             //ejecutar reproduccion
 
         }
