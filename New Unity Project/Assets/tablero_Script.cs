@@ -26,15 +26,15 @@ public class tablero_Script : MonoBehaviour {
     void Start() {
         //inicializacion de las variables
         //cada ciudad se corresponde con un numero
+        Random.seed = (int)System.DateTime.Now.Millisecond;
         for (int i = 0; i < arr_ciudades.Length; i++) {
             arr_ciudades[i] = new Ciudad();
         }
 
         combate = new Combate(arr_ciudades[0], arr_ciudades[1], arr_ciudades[2], arr_ciudades[3]);
         numCombate = 1;
-        estado = 3;
+        estado = 1;
         graficosIni();
-        Random.seed = (int)System.DateTime.Now.Millisecond;
         actualizarGraficos();
 
     }
@@ -51,7 +51,7 @@ public class tablero_Script : MonoBehaviour {
             if (combate.combateTerminado())
             {
                 estado = 2;
-                numGeneracion++;
+                
             }
             //Debug.Log("hola holita");
             //estado = 3;
@@ -66,6 +66,7 @@ public class tablero_Script : MonoBehaviour {
             if (numCombate == 64 / 4)
             {
                 estado = 3;
+                numGeneracion++;
             }
             else
             {
@@ -81,6 +82,37 @@ public class tablero_Script : MonoBehaviour {
             writeFile(numGeneracion);
             //ejecutar reproduccion
             arr_ciudades=Ciudad.ordenaArrCiudades(arr_ciudades);
+            int[] fitnessAcumulado = new int[64];
+            fitnessAcumulado[0] = arr_ciudades[0].getFitness();
+            for(int i = 1; i < 64; i++)
+            {
+                fitnessAcumulado[i] = arr_ciudades[0].getFitness() + fitnessAcumulado[i-1];
+            }
+            Ciudad[] nuevasCiudades = new Ciudad[16];
+            int j;
+            int k;
+            for(int i = 0; i < 16; i++)
+            {
+                int valRandom=Random.Range(0, fitnessAcumulado[63]);
+                j = 0;
+                while (valRandom > fitnessAcumulado[j] && j < 64)
+                {
+                    j++;
+                }
+                k = 0;
+                while (valRandom > fitnessAcumulado[k] && k < 64)
+                {
+                    k++;
+                }
+                nuevasCiudades[i] = Ciudad.reproducir(arr_ciudades[j], arr_ciudades[k]);
+            }
+            for(int i = 0; i < 16; i++)
+            {
+                arr_ciudades[i + 48] = nuevasCiudades[i];
+            }
+            arr_ciudades=randomizar(arr_ciudades);
+            estado = 1;
+            Debug.Log("acaba una generacion");
 
         }
         if (estado == 0) {
@@ -165,6 +197,20 @@ public class tablero_Script : MonoBehaviour {
                 file.WriteLine();
             }
         }
+    }
+    private Ciudad[] randomizar(Ciudad[] arrCiudades)
+    {
+        Ciudad[] resultado = new Ciudad[arrCiudades.Length];
+        for(int i = 0; i < resultado.Length; i++)
+        {
+            int valRandom = Random.Range(0, resultado.Length - i);
+            resultado[i] = arrCiudades[valRandom];
+            for(int j = valRandom; j < arrCiudades.Length-1; j++)
+            {
+                arrCiudades[j] = arrCiudades[j + 1];
+            }
+        }
+        return resultado;
     }
        
 

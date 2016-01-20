@@ -24,7 +24,7 @@ public class Ciudad {
         //int randomNumber = Random.Range(1, 5);
 
     }
-    public Ciudad(int[] stats) {
+    public Ciudad(int[] stats, int valentia) {
         //si te explota en la cara arreglalo
         this.stats = stats;
     }
@@ -34,7 +34,7 @@ public class Ciudad {
         }
         valentia = Random.Range(0, 100);
     }
-    private static Ciudad reproducir(Ciudad ciudad1, Ciudad ciudad2) {
+    public static Ciudad reproducir(Ciudad ciudad1, Ciudad ciudad2) {
         int[] stats = new int[Constants.PUNTOS];
         int randomNumber = Random.Range(0, Constants.PUNTOS + 1);
         for (int i = 0; i < randomNumber; i++) {
@@ -43,8 +43,11 @@ public class Ciudad {
         for (int i = randomNumber; i < stats.Length; i++) {
             stats[i] = ciudad2.stats[i];
         }
+        Debug.Log(ciudad1.getFitness());
+        Debug.Log(ciudad2.getFitness());
+        int valentia = ((ciudad1.getFitness() * ciudad1.getValentia()) + (ciudad2.getFitness() * ciudad2.getValentia())) * 100 / (ciudad1.getFitness() + ciudad2.getFitness());
 
-        return new Ciudad(stats);
+        return new Ciudad(stats, valentia);
     }
     public static Ciudad[] ordenaArrCiudades(Ciudad[] arrCiudades)
     {
