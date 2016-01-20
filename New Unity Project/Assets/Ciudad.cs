@@ -156,11 +156,16 @@ public class Ciudad {
                     //ganamos nosotros
                     tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()] = this.color;
                     ciudadAtacada.tamaño--;
+                    //Perdida de puntos a la enemiga
+                    ciudadAtacada.fitness -= 3;
                     ciudadAtacada.setPoblacion(ciudadAtacada.getPoblacion() - 5);
                     exito = true;
+                    //Bonus por ataque completado con exito
+                    this.fitness += 5;
                 }
                 else {
-                    //gana el otro noob jaja saludos
+                    //Bonus por defensa
+                    ciudadAtacada.fitness += 5;
                     exito = false;
                 }
 
@@ -217,10 +222,15 @@ public class Ciudad {
                     tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()] = this.color;
                     ciudadAtacada.setPoblacion(ciudadAtacada.getPoblacion() - 5);
                     ciudadAtacada.tamaño--;
+                    //perdida de puntos
+                    ciudadAtacada.fitness -= 3;
                     exito = true;
+                    //Bonus por ataque completado con exito
+                    this.fitness += 5;
                 }
                 else {
-                    //gana el otro noob jaja saludos
+                    //Bonus por defensa
+                    ciudadAtacada.fitness += 5;
                     exito = false;
                 }
 
@@ -233,6 +243,7 @@ public class Ciudad {
 
         if (exito) {
             tamaño++;
+            fitness += 5;
         }
 
 
@@ -320,4 +331,8 @@ public class Ciudad {
     {
         return valentia;
     }
+    public void setFitness(int fitness) {
+        this.fitness = fitness;
+    }
+    
 }

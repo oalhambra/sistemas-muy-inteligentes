@@ -33,6 +33,7 @@ public class Tablero {
         ciudad.setEjercito(0);
         ciudad.setPoblacion(1);
         ciudad.setTamaño(1);
+        ciudad.setFitness(0);
         ciudad.setColor(color);
     }
 

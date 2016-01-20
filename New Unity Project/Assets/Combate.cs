@@ -17,6 +17,7 @@ public class Combate {
         //comprobar si la ciudad sigue activa
         if (ciudad.getTamaño() > 0) {
             //incrementa valores de la ciudad
+            ciudad.setFitness(ciudad.getFitness() + 1);
             int poblacionAntigua = ciudad.getPoblacion();
 
             ciudad.setEjercito(ciudad.getEjercito() + ciudad.getMinas() * 6);
@@ -36,25 +37,20 @@ public class Combate {
                 //tablero.setTablero(aux.getTablero());
             }
 
-           
+
 
         }
         return ciudad;
 
 
     }
-    public bool combateTerminado()
-        
-    {
-        bool resultado =true;
+    public bool combateTerminado() {
+        bool resultado = true;
         int[,] tabAux = tablero.getTablero();
-        int ciudad = tabAux[0,0];
-        for(int i = 0; i < Constants.TAMAÑO; i++)
-        {
-            for(int j = 0; j < Constants.TAMAÑO; j++)
-            {
-                if (tabAux[i, j] != ciudad)
-                {
+        int ciudad = tabAux[0, 0];
+        for (int i = 0; i < Constants.TAMAÑO; i++) {
+            for (int j = 0; j < Constants.TAMAÑO; j++) {
+                if (tabAux[i, j] != ciudad) {
                     resultado = false;
                 }
             }
