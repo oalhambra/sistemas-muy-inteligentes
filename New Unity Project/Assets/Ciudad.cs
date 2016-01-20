@@ -9,7 +9,7 @@ public class Ciudad {
     const int MINAS = 3;
     const int GRANJAS = 4;
 
-    double valentia;
+    int valentia;
 
     int poblacion;
     int ejercito;
@@ -46,6 +46,30 @@ public class Ciudad {
 
         return new Ciudad(stats);
     }
+    public static Ciudad[] ordenaArrCiudades(Ciudad[] arrCiudades)
+    {
+        int i, j;
+        int N = arrCiudades.Length;
+
+        for (j = N - 1; j > 0; j--)
+        {
+            for (i = 0; i < j; i++)
+            {
+                if (arrCiudades[i].getFitness() > arrCiudades[i + 1].getFitness())
+                    exchange(arrCiudades, i, i + 1);
+            }
+        }
+        return arrCiudades;
+    }
+    private static void exchange(Ciudad[] data, int m, int n)
+    {
+        Ciudad temporary;
+
+        temporary = data[m];
+        data[m] = data[n];
+        data[n] = temporary;
+    }
+    
     public int getPoblacion() {
         return poblacion;
     }
@@ -288,5 +312,12 @@ public class Ciudad {
         }
         return granjas;
     }
-
+    public int getFitness()
+    {
+        return fitness;
+    }
+    public int getValentia()
+    {
+        return valentia;
+    }
 }

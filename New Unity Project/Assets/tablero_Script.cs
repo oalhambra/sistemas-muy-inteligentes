@@ -21,6 +21,7 @@ public class tablero_Script : MonoBehaviour {
     private GameObject ciudad;
     private int estado;
     private int numCombate;
+    private int numGeneracion=0;
 
     void Start() {
         //inicializacion de las variables
@@ -31,7 +32,7 @@ public class tablero_Script : MonoBehaviour {
 
         combate = new Combate(arr_ciudades[0], arr_ciudades[1], arr_ciudades[2], arr_ciudades[3]);
         numCombate = 1;
-        estado = 1;
+        estado = 3;
         graficosIni();
         Random.seed = (int)System.DateTime.Now.Millisecond;
         actualizarGraficos();
@@ -50,6 +51,7 @@ public class tablero_Script : MonoBehaviour {
             if (combate.combateTerminado())
             {
                 estado = 2;
+                numGeneracion++;
             }
             //Debug.Log("hola holita");
             //estado = 3;
@@ -76,7 +78,9 @@ public class tablero_Script : MonoBehaviour {
         if (estado == 3) {
             //seleccionar pareja a reproducir en funcion de fitness
             Debug.Log("toca reproducir");
+            writeFile(numGeneracion);
             //ejecutar reproduccion
+            arr_ciudades=Ciudad.ordenaArrCiudades(arr_ciudades);
 
         }
         if (estado == 0) {
@@ -142,6 +146,25 @@ public class tablero_Script : MonoBehaviour {
 
         tableroGrafico[i, j].GetComponent<Renderer>().material.color = color;
  
+    }
+    private void writeFile(int numGeneracion)
+    {
+        using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(@".\generacion_"+numGeneracion+".txt", true))
+        {
+            file.WriteLine("Generacion "+ numGeneracion);
+            for(int i = 0; i < arr_ciudades.Length; i++)
+            {
+                file.WriteLine("Ciudad " + i);
+                file.WriteLine("\tFitness " + arr_ciudades[i].getFitness());
+                file.WriteLine("\tCiudadanos " + arr_ciudades[i].getCiudadanos());
+                file.WriteLine("\tMilitar " + arr_ciudades[i].getMilitar());
+                file.WriteLine("\tMinas " + arr_ciudades[i].getMinas());
+                file.WriteLine("\tGranjas " + arr_ciudades[i].getGranjas());
+                file.WriteLine("\tValentia " + arr_ciudades[i].getValentia());
+                file.WriteLine();
+            }
+        }
     }
        
 
