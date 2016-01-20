@@ -67,6 +67,7 @@ public class tablero_Script : MonoBehaviour {
             {
                 estado = 3;
                 numGeneracion++;
+                numCombate = 0;
             }
             else
             {
@@ -86,7 +87,7 @@ public class tablero_Script : MonoBehaviour {
             fitnessAcumulado[0] = arr_ciudades[0].getFitness();
             for(int i = 1; i < 64; i++)
             {
-                fitnessAcumulado[i] = arr_ciudades[0].getFitness() + fitnessAcumulado[i-1];
+                fitnessAcumulado[i] = arr_ciudades[i].getFitness() + fitnessAcumulado[i-1];
             }
             Ciudad[] nuevasCiudades = new Ciudad[16];
             int j;
@@ -94,6 +95,7 @@ public class tablero_Script : MonoBehaviour {
             for(int i = 0; i < 16; i++)
             {
                 int valRandom=Random.Range(0, fitnessAcumulado[63]);
+                Debug.Log(valRandom);
                 j = 0;
                 while (valRandom > fitnessAcumulado[j] && j < 64)
                 {
@@ -104,7 +106,7 @@ public class tablero_Script : MonoBehaviour {
                 {
                     k++;
                 }
-                nuevasCiudades[i] = Ciudad.reproducir(arr_ciudades[j], arr_ciudades[k]);
+                nuevasCiudades[i] = arr_ciudades[j].reproducir(arr_ciudades[k]);
             }
             for(int i = 0; i < 16; i++)
             {

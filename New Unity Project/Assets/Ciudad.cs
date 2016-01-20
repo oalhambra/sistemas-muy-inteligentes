@@ -27,6 +27,8 @@ public class Ciudad {
     public Ciudad(int[] stats, int valentia) {
         //si te explota en la cara arreglalo
         this.stats = stats;
+        this.valentia = valentia;
+        fitness = 1;
     }
     private void inicializarStats() {
         for (int i = 0; i < stats.Length; i++) {
@@ -34,18 +36,18 @@ public class Ciudad {
         }
         valentia = Random.Range(0, 100);
     }
-    public static Ciudad reproducir(Ciudad ciudad1, Ciudad ciudad2) {
+    public  Ciudad reproducir( Ciudad ciudad2) {
         int[] stats = new int[Constants.PUNTOS];
         int randomNumber = Random.Range(0, Constants.PUNTOS + 1);
         for (int i = 0; i < randomNumber; i++) {
-            stats[i] = ciudad1.stats[i];
+            stats[i] = this.stats[i];
         }
         for (int i = randomNumber; i < stats.Length; i++) {
             stats[i] = ciudad2.stats[i];
         }
-        Debug.Log(ciudad1.getFitness());
+        Debug.Log(this.getFitness());
         Debug.Log(ciudad2.getFitness());
-        int valentia = ((ciudad1.getFitness() * ciudad1.getValentia()) + (ciudad2.getFitness() * ciudad2.getValentia())) * 100 / (ciudad1.getFitness() + ciudad2.getFitness());
+        int valentia = ((this.getFitness() * this.getValentia()) + (ciudad2.getFitness() * ciudad2.getValentia())) / (this.fitness + ciudad2.fitness);
 
         return new Ciudad(stats, valentia);
     }
@@ -58,7 +60,7 @@ public class Ciudad {
         {
             for (i = 0; i < j; i++)
             {
-                if (arrCiudades[i].getFitness() > arrCiudades[i + 1].getFitness())
+                if (arrCiudades[i].getFitness() < arrCiudades[i + 1].getFitness())
                     exchange(arrCiudades, i, i + 1);
             }
         }
