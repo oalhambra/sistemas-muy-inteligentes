@@ -1,0 +1,577 @@
+Generacion 3
+Ciudad 0
+	Generacion 0
+	Fitness 17920
+	Ciudadanos 8
+	Militar 18
+	Minas 12
+	Granjas 12
+	Valentia 22
+
+Ciudad 1
+	Generacion 0
+	Fitness 15250
+	Ciudadanos 5
+	Militar 23
+	Minas 10
+	Granjas 12
+	Valentia 96
+
+Ciudad 2
+	Generacion 0
+	Fitness 11445
+	Ciudadanos 8
+	Militar 19
+	Minas 9
+	Granjas 14
+	Valentia 98
+
+Ciudad 3
+	Generacion 0
+	Fitness 10660
+	Ciudadanos 12
+	Militar 20
+	Minas 13
+	Granjas 5
+	Valentia 9
+
+Ciudad 4
+	Generacion 1
+	Fitness 10197
+	Ciudadanos 9
+	Militar 20
+	Minas 12
+	Granjas 9
+	Valentia 83
+
+Ciudad 5
+	Generacion 0
+	Fitness 10185
+	Ciudadanos 12
+	Militar 13
+	Minas 10
+	Granjas 15
+	Valentia 13
+
+Ciudad 6
+	Generacion 2
+	Fitness 10170
+	Ciudadanos 15
+	Militar 16
+	Minas 9
+	Granjas 10
+	Valentia 46
+
+Ciudad 7
+	Generacion 0
+	Fitness 10041
+	Ciudadanos 10
+	Militar 16
+	Minas 11
+	Granjas 13
+	Valentia 66
+
+Ciudad 8
+	Generacion 2
+	Fitness 9792
+	Ciudadanos 7
+	Militar 20
+	Minas 12
+	Granjas 11
+	Valentia 84
+
+Ciudad 9
+	Generacion 2
+	Fitness 9116
+	Ciudadanos 10
+	Militar 20
+	Minas 13
+	Granjas 7
+	Valentia 9
+
+Ciudad 10
+	Generacion 1
+	Fitness 8933
+	Ciudadanos 13
+	Militar 20
+	Minas 11
+	Granjas 6
+	Valentia 8
+
+Ciudad 11
+	Generacion 0
+	Fitness 8805
+	Ciudadanos 12
+	Militar 18
+	Minas 10
+	Granjas 10
+	Valentia 24
+
+Ciudad 12
+	Generacion 0
+	Fitness 8598
+	Ciudadanos 15
+	Militar 17
+	Minas 11
+	Granjas 7
+	Valentia 89
+
+Ciudad 13
+	Generacion 2
+	Fitness 8509
+	Ciudadanos 16
+	Militar 18
+	Minas 12
+	Granjas 4
+	Valentia 13
+
+Ciudad 14
+	Generacion 2
+	Fitness 8482
+	Ciudadanos 11
+	Militar 22
+	Minas 13
+	Granjas 4
+	Valentia 35
+
+Ciudad 15
+	Generacion 0
+	Fitness 8438
+	Ciudadanos 13
+	Militar 18
+	Minas 13
+	Granjas 6
+	Valentia 65
+
+Ciudad 16
+	Generacion 1
+	Fitness 7165
+	Ciudadanos 6
+	Militar 18
+	Minas 16
+	Granjas 10
+	Valentia 80
+
+Ciudad 17
+	Generacion 0
+	Fitness 5631
+	Ciudadanos 12
+	Militar 18
+	Minas 12
+	Granjas 8
+	Valentia 67
+
+Ciudad 18
+	Generacion 0
+	Fitness 4743
+	Ciudadanos 16
+	Militar 14
+	Minas 8
+	Granjas 12
+	Valentia 54
+
+Ciudad 19
+	Generacion 1
+	Fitness 4678
+	Ciudadanos 10
+	Militar 18
+	Minas 12
+	Granjas 10
+	Valentia 78
+
+Ciudad 20
+	Generacion 0
+	Fitness 4320
+	Ciudadanos 14
+	Militar 17
+	Minas 12
+	Granjas 7
+	Valentia 11
+
+Ciudad 21
+	Generacion 0
+	Fitness 3978
+	Ciudadanos 17
+	Militar 15
+	Minas 8
+	Granjas 10
+	Valentia 50
+
+Ciudad 22
+	Generacion 1
+	Fitness 3860
+	Ciudadanos 10
+	Militar 16
+	Minas 11
+	Granjas 13
+	Valentia 73
+
+Ciudad 23
+	Generacion 2
+	Fitness 3651
+	Ciudadanos 12
+	Militar 17
+	Minas 9
+	Granjas 12
+	Valentia 18
+
+Ciudad 24
+	Generacion 1
+	Fitness 3495
+	Ciudadanos 16
+	Militar 11
+	Minas 11
+	Granjas 12
+	Valentia 47
+
+Ciudad 25
+	Generacion 0
+	Fitness 3304
+	Ciudadanos 18
+	Militar 18
+	Minas 7
+	Granjas 7
+	Valentia 75
+
+Ciudad 26
+	Generacion 0
+	Fitness 3231
+	Ciudadanos 16
+	Militar 14
+	Minas 11
+	Granjas 9
+	Valentia 40
+
+Ciudad 27
+	Generacion 1
+	Fitness 3068
+	Ciudadanos 12
+	Militar 15
+	Minas 9
+	Granjas 14
+	Valentia 87
+
+Ciudad 28
+	Generacion 0
+	Fitness 2796
+	Ciudadanos 6
+	Militar 18
+	Minas 15
+	Granjas 11
+	Valentia 83
+
+Ciudad 29
+	Generacion 2
+	Fitness 2762
+	Ciudadanos 14
+	Militar 16
+	Minas 11
+	Granjas 9
+	Valentia 15
+
+Ciudad 30
+	Generacion 0
+	Fitness 2556
+	Ciudadanos 14
+	Militar 17
+	Minas 9
+	Granjas 10
+	Valentia 11
+
+Ciudad 31
+	Generacion 2
+	Fitness 2412
+	Ciudadanos 17
+	Militar 16
+	Minas 5
+	Granjas 12
+	Valentia 75
+
+Ciudad 32
+	Generacion 0
+	Fitness 2295
+	Ciudadanos 11
+	Militar 16
+	Minas 9
+	Granjas 14
+	Valentia 19
+
+Ciudad 33
+	Generacion 2
+	Fitness 2191
+	Ciudadanos 11
+	Militar 16
+	Minas 14
+	Granjas 9
+	Valentia 54
+
+Ciudad 34
+	Generacion 0
+	Fitness 2054
+	Ciudadanos 13
+	Militar 11
+	Minas 12
+	Granjas 14
+	Valentia 26
+
+Ciudad 35
+	Generacion 0
+	Fitness 1773
+	Ciudadanos 18
+	Militar 12
+	Minas 10
+	Granjas 10
+	Valentia 29
+
+Ciudad 36
+	Generacion 2
+	Fitness 1769
+	Ciudadanos 7
+	Militar 19
+	Minas 9
+	Granjas 15
+	Valentia 88
+
+Ciudad 37
+	Generacion 0
+	Fitness 1495
+	Ciudadanos 14
+	Militar 11
+	Minas 10
+	Granjas 15
+	Valentia 90
+
+Ciudad 38
+	Generacion 1
+	Fitness 1411
+	Ciudadanos 15
+	Militar 15
+	Minas 9
+	Granjas 11
+	Valentia 90
+
+Ciudad 39
+	Generacion 1
+	Fitness 1395
+	Ciudadanos 15
+	Militar 12
+	Minas 9
+	Granjas 14
+	Valentia 31
+
+Ciudad 40
+	Generacion 1
+	Fitness 1394
+	Ciudadanos 11
+	Militar 15
+	Minas 16
+	Granjas 8
+	Valentia 67
+
+Ciudad 41
+	Generacion 0
+	Fitness 872
+	Ciudadanos 13
+	Militar 16
+	Minas 13
+	Granjas 8
+	Valentia 99
+
+Ciudad 42
+	Generacion 0
+	Fitness 839
+	Ciudadanos 13
+	Militar 15
+	Minas 12
+	Granjas 10
+	Valentia 29
+
+Ciudad 43
+	Generacion 0
+	Fitness 830
+	Ciudadanos 15
+	Militar 9
+	Minas 11
+	Granjas 15
+	Valentia 2
+
+Ciudad 44
+	Generacion 0
+	Fitness 829
+	Ciudadanos 7
+	Militar 16
+	Minas 15
+	Granjas 12
+	Valentia 25
+
+Ciudad 45
+	Generacion 2
+	Fitness 632
+	Ciudadanos 15
+	Militar 6
+	Minas 17
+	Granjas 12
+	Valentia 59
+
+Ciudad 46
+	Generacion 0
+	Fitness 563
+	Ciudadanos 11
+	Militar 14
+	Minas 15
+	Granjas 10
+	Valentia 1
+
+Ciudad 47
+	Generacion 0
+	Fitness 555
+	Ciudadanos 14
+	Militar 14
+	Minas 12
+	Granjas 10
+	Valentia 32
+
+Ciudad 48
+	Generacion 1
+	Fitness 519
+	Ciudadanos 11
+	Militar 15
+	Minas 12
+	Granjas 12
+	Valentia 78
+
+Ciudad 49
+	Generacion 0
+	Fitness 431
+	Ciudadanos 10
+	Militar 10
+	Minas 19
+	Granjas 11
+	Valentia 14
+
+Ciudad 50
+	Generacion 2
+	Fitness 418
+	Ciudadanos 7
+	Militar 16
+	Minas 13
+	Granjas 14
+	Valentia 48
+
+Ciudad 51
+	Generacion 2
+	Fitness 392
+	Ciudadanos 10
+	Militar 14
+	Minas 13
+	Granjas 13
+	Valentia 55
+
+Ciudad 52
+	Generacion 0
+	Fitness 392
+	Ciudadanos 10
+	Militar 15
+	Minas 13
+	Granjas 12
+	Valentia 3
+
+Ciudad 53
+	Generacion 0
+	Fitness 388
+	Ciudadanos 15
+	Militar 12
+	Minas 11
+	Granjas 12
+	Valentia 6
+
+Ciudad 54
+	Generacion 0
+	Fitness 384
+	Ciudadanos 12
+	Militar 13
+	Minas 17
+	Granjas 8
+	Valentia 11
+
+Ciudad 55
+	Generacion 0
+	Fitness 383
+	Ciudadanos 10
+	Militar 16
+	Minas 9
+	Granjas 15
+	Valentia 91
+
+Ciudad 56
+	Generacion 0
+	Fitness 375
+	Ciudadanos 11
+	Militar 8
+	Minas 13
+	Granjas 18
+	Valentia 38
+
+Ciudad 57
+	Generacion 2
+	Fitness 364
+	Ciudadanos 20
+	Militar 15
+	Minas 7
+	Granjas 8
+	Valentia 75
+
+Ciudad 58
+	Generacion 2
+	Fitness 344
+	Ciudadanos 11
+	Militar 14
+	Minas 10
+	Granjas 15
+	Valentia 75
+
+Ciudad 59
+	Generacion 0
+	Fitness 341
+	Ciudadanos 11
+	Militar 14
+	Minas 13
+	Granjas 12
+	Valentia 48
+
+Ciudad 60
+	Generacion 2
+	Fitness 327
+	Ciudadanos 14
+	Militar 16
+	Minas 9
+	Granjas 11
+	Valentia 51
+
+Ciudad 61
+	Generacion 1
+	Fitness 312
+	Ciudadanos 14
+	Militar 10
+	Minas 12
+	Granjas 14
+	Valentia 89
+
+Ciudad 62
+	Generacion 1
+	Fitness 245
+	Ciudadanos 17
+	Militar 16
+	Minas 5
+	Granjas 12
+	Valentia 75
+
+Ciudad 63
+	Generacion 1
+	Fitness 244
+	Ciudadanos 12
+	Militar 12
+	Minas 14
+	Granjas 12
+	Valentia 91
+

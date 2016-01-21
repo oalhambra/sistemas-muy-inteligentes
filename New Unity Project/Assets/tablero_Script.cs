@@ -99,6 +99,7 @@ public class tablero_Script : MonoBehaviour {
                 while (valRandom > fitnessAcumulado[j] && j < 64) {
                     j++;
                 }
+                valRandom = Random.Range(0, fitnessAcumulado[63]);
                 k = 0;
                 while (valRandom > fitnessAcumulado[k] && k < 64) {
                     k++;
