@@ -49,10 +49,11 @@ public class tablero_Script : MonoBehaviour {
             turnos++;
             if (combate.combateTerminado()) {
                 estado = 2;
-
+                turnos=0;
             }
             if (turnos==1500){
                 estado=2;
+                turnos=0;
             }
             //Debug.Log("hola holita");
             //estado = 3;
