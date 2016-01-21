@@ -22,6 +22,7 @@ public class tablero_Script : MonoBehaviour {
     private int estado;
     private int numCombate;
     private int numGeneracion = 0;
+    int turnos=0;
 
     void Start() {
         //inicializacion de las variables
@@ -45,9 +46,13 @@ public class tablero_Script : MonoBehaviour {
 
             //ejecutarCombate nos devuelve true si solo queda una ciudad viva
             combate.ejecutarCombate();
+            turnos++;
             if (combate.combateTerminado()) {
                 estado = 2;
 
+            }
+            if (turnos==1500){
+                estado=2;
             }
             //Debug.Log("hola holita");
             //estado = 3;
@@ -117,7 +122,7 @@ public class tablero_Script : MonoBehaviour {
                     }
 
                 }
-                
+
                 nuevasCiudades[i] = arr_ciudades[j].reproducir(arr_ciudades[k], numGeneracion);
             }
             for (int i = 0; i < 16; i++) {
