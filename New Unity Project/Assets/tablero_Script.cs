@@ -80,9 +80,10 @@ public class tablero_Script : MonoBehaviour {
         if (estado == 3) {
             //seleccionar pareja a reproducir en funcion de fitness
             Debug.Log("toca reproducir");
-            writeFile(numGeneracion);
+            
             //ejecutar reproduccion
             arr_ciudades = Ciudad.ordenaArrCiudades(arr_ciudades);
+            writeFile(numGeneracion);
             int[] fitnessAcumulado = new int[64];
             fitnessAcumulado[0] = arr_ciudades[0].getFitness();
             for (int i = 1; i < 64; i++) {
@@ -102,7 +103,7 @@ public class tablero_Script : MonoBehaviour {
                 while (valRandom > fitnessAcumulado[k] && k < 64) {
                     k++;
                 }
-                nuevasCiudades[i] = arr_ciudades[j].reproducir(arr_ciudades[k]);
+                nuevasCiudades[i] = arr_ciudades[j].reproducir(arr_ciudades[k], numGeneracion);
             }
             for (int i = 0; i < 16; i++) {
                 arr_ciudades[i + 48] = nuevasCiudades[i];
@@ -184,6 +185,7 @@ public class tablero_Script : MonoBehaviour {
             file.WriteLine("Generacion " + numGeneracion);
             for (int i = 0; i < arr_ciudades.Length; i++) {
                 file.WriteLine("Ciudad " + i);
+                file.WriteLine("\tGeneracion " + arr_ciudades[i].getGeneracion());
                 file.WriteLine("\tFitness " + arr_ciudades[i].getFitness());
                 file.WriteLine("\tCiudadanos " + arr_ciudades[i].getCiudadanos());
                 file.WriteLine("\tMilitar " + arr_ciudades[i].getMilitar());

@@ -16,6 +16,7 @@ public class Ciudad {
     public float bonusPoblacion = 0;
     public float bonusEjercito = 0;
     int fitness;
+    int generacion;
 
     int tamaño;
 
@@ -23,14 +24,16 @@ public class Ciudad {
     public Ciudad() {
 
         inicializarStats();
+        generacion = 0;
         //int randomNumber = Random.Range(1, 5);
 
     }
-    public Ciudad(int[] stats, int valentia) {
+    public Ciudad(int[] stats, int valentia, int generacion) {
         //si te explota en la cara arreglalo
         this.stats = stats;
         this.valentia = valentia;
         fitness = 1;
+        this.generacion = generacion;
     }
     private void inicializarStats() {
         for (int i = 0; i < stats.Length; i++) {
@@ -38,7 +41,7 @@ public class Ciudad {
         }
         valentia = Random.Range(0, 100);
     }
-    public Ciudad reproducir(Ciudad ciudad2) {
+    public Ciudad reproducir(Ciudad ciudad2, int generacion) {
         int[] stats = new int[Constants.PUNTOS];
         int randomNumber = Random.Range(0, Constants.PUNTOS + 1);
         for (int i = 0; i < randomNumber; i++) {
@@ -51,7 +54,7 @@ public class Ciudad {
         Debug.Log(ciudad2.getFitness());
         int valentia = ((this.getFitness() * this.getValentia()) + (ciudad2.getFitness() * ciudad2.getValentia())) / (this.fitness + ciudad2.fitness);
 
-        return new Ciudad(stats, valentia);
+        return new Ciudad(stats, valentia, generacion);
     }
     public static Ciudad[] ordenaArrCiudades(Ciudad[] arrCiudades) {
         int i, j;
@@ -337,6 +340,10 @@ public class Ciudad {
     }
     public float calcularValorDeAtaque() {
         return tamaño + ejercito;
+    }
+    public int getGeneracion()
+    {
+        return generacion;
     }
 
 }
