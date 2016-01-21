@@ -38,7 +38,7 @@ public class Ciudad {
         }
         valentia = Random.Range(0, 100);
     }
-    public  Ciudad reproducir( Ciudad ciudad2) {
+    public Ciudad reproducir(Ciudad ciudad2) {
         int[] stats = new int[Constants.PUNTOS];
         int randomNumber = Random.Range(0, Constants.PUNTOS + 1);
         for (int i = 0; i < randomNumber; i++) {
@@ -53,30 +53,26 @@ public class Ciudad {
 
         return new Ciudad(stats, valentia);
     }
-    public static Ciudad[] ordenaArrCiudades(Ciudad[] arrCiudades)
-    {
+    public static Ciudad[] ordenaArrCiudades(Ciudad[] arrCiudades) {
         int i, j;
         int N = arrCiudades.Length;
 
-        for (j = N - 1; j > 0; j--)
-        {
-            for (i = 0; i < j; i++)
-            {
+        for (j = N - 1; j > 0; j--) {
+            for (i = 0; i < j; i++) {
                 if (arrCiudades[i].getFitness() < arrCiudades[i + 1].getFitness())
                     exchange(arrCiudades, i, i + 1);
             }
         }
         return arrCiudades;
     }
-    private static void exchange(Ciudad[] data, int m, int n)
-    {
+    private static void exchange(Ciudad[] data, int m, int n) {
         Ciudad temporary;
 
         temporary = data[m];
         data[m] = data[n];
         data[n] = temporary;
     }
-    
+
     public float getPoblacion() {
         return poblacion;
     }
@@ -136,7 +132,7 @@ public class Ciudad {
 
 
         if (valentia > Random.Range(0, 100)) {
-            Debug.Log("Tenemos un valiente. Valentia: " + valentia);
+            //Debug.Log("Tenemos un valiente. Valentia: " + valentia);
             if (arrOcupadas.Length > 0) {
 
                 Coordenadas posExpansion = arrOcupadas[Random.Range(0, arrOcupadas.Length)];
@@ -182,7 +178,7 @@ public class Ciudad {
             }
             else if (arrLibres.Length > 0) {
                 // Se puede hacer un movimiento a un espacio libre
-               // Debug.Log("Hay una opcion de desplazamiento. La long del arrLibres es " + arrLibres.Length);
+                // Debug.Log("Hay una opcion de desplazamiento. La long del arrLibres es " + arrLibres.Length);
                 //seleccionar posicion a random
                 exito = true;
                 Coordenadas posExpansion = arrLibres[Random.Range(0, arrLibres.Length)];
@@ -192,7 +188,7 @@ public class Ciudad {
         }
 
         else {
-            Debug.Log("Tenemos un cobarde. Valentia: " + valentia);
+            //Debug.Log("Tenemos un cobarde. Valentia: " + valentia);
             // Falta elegir una random
             if (arrLibres.Length > 0) {
                 // Se puede hacer un movimiento a un espacio libre
@@ -330,12 +326,10 @@ public class Ciudad {
         }
         return granjas;
     }
-    public int getFitness()
-    {
+    public int getFitness() {
         return fitness;
     }
-    public int getValentia()
-    {
+    public int getValentia() {
         return valentia;
     }
     public void setFitness(int fitness) {

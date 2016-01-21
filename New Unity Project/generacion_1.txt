@@ -1,1026 +1,513 @@
 Generacion 1
 Ciudad 0
-	Fitness 501
-	Ciudadanos 8
-	Militar 5
-	Minas 3
-	Granjas 4
-	Valentia 72
+	Fitness 7220
+	Ciudadanos 6
+	Militar 7
+	Minas 4
+	Granjas 3
+	Valentia 51
 
 Ciudad 1
-	Fitness 15695
-	Ciudadanos 6
-	Militar 8
+	Fitness 1060
+	Ciudadanos 3
+	Militar 7
 	Minas 5
-	Granjas 1
-	Valentia 19
+	Granjas 5
+	Valentia 22
 
 Ciudad 2
-	Fitness 2094
-	Ciudadanos 8
+	Fitness 366
+	Ciudadanos 4
 	Militar 3
-	Minas 4
-	Granjas 5
-	Valentia 75
+	Minas 7
+	Granjas 6
+	Valentia 98
 
 Ciudad 3
-	Fitness 5185
-	Ciudadanos 5
-	Militar 6
-	Minas 4
-	Granjas 5
-	Valentia 8
-
-Ciudad 4
-	Fitness 11450
-	Ciudadanos 8
-	Militar 4
-	Minas 6
-	Granjas 2
-	Valentia 56
-
-Ciudad 5
-	Fitness 3447
-	Ciudadanos 6
-	Militar 5
-	Minas 5
-	Granjas 4
-	Valentia 38
-
-Ciudad 6
-	Fitness 576
-	Ciudadanos 6
-	Militar 5
-	Minas 3
-	Granjas 6
-	Valentia 43
-
-Ciudad 7
-	Fitness 2587
-	Ciudadanos 6
-	Militar 4
-	Minas 4
-	Granjas 6
-	Valentia 90
-
-Ciudad 8
-	Fitness 11455
-	Ciudadanos 3
-	Militar 7
-	Minas 6
-	Granjas 4
-	Valentia 8
-
-Ciudad 9
-	Fitness 2405
-	Ciudadanos 5
-	Militar 4
-	Minas 6
-	Granjas 5
-	Valentia 18
-
-Ciudad 10
-	Fitness 405
-	Ciudadanos 9
-	Militar 4
-	Minas 3
-	Granjas 4
-	Valentia 33
-
-Ciudad 11
-	Fitness 1780
+	Fitness 1810
 	Ciudadanos 4
-	Militar 6
-	Minas 4
-	Granjas 6
-	Valentia 40
-
-Ciudad 12
-	Fitness 3388
-	Ciudadanos 6
 	Militar 4
-	Minas 7
-	Granjas 3
-	Valentia 95
-
-Ciudad 13
-	Fitness 1079
-	Ciudadanos 4
-	Militar 6
 	Minas 6
-	Granjas 4
+	Granjas 6
 	Valentia 75
 
-Ciudad 14
-	Fitness 729
-	Ciudadanos 7
-	Militar 6
-	Minas 1
-	Granjas 6
-	Valentia 34
-
-Ciudad 15
-	Fitness 11989
-	Ciudadanos 7
-	Militar 2
-	Minas 9
-	Granjas 2
-	Valentia 79
-
-Ciudad 16
-	Fitness 478
-	Ciudadanos 4
-	Militar 5
-	Minas 2
-	Granjas 9
-	Valentia 62
-
-Ciudad 17
-	Fitness 2096
-	Ciudadanos 7
-	Militar 6
-	Minas 5
-	Granjas 2
-	Valentia 3
-
-Ciudad 18
-	Fitness 10675
-	Ciudadanos 7
+Ciudad 4
+	Fitness 3909
+	Ciudadanos 5
 	Militar 3
-	Minas 5
-	Granjas 5
-	Valentia 47
-
-Ciudad 19
-	Fitness 618
-	Ciudadanos 5
-	Militar 6
-	Minas 4
-	Granjas 5
-	Valentia 31
-
-Ciudad 20
-	Fitness 527
-	Ciudadanos 7
-	Militar 6
-	Minas 2
-	Granjas 5
-	Valentia 40
-
-Ciudad 21
-	Fitness 11910
-	Ciudadanos 8
-	Militar 5
-	Minas 4
-	Granjas 3
-	Valentia 63
-
-Ciudad 22
-	Fitness 3318
-	Ciudadanos 3
-	Militar 6
-	Minas 2
-	Granjas 9
-	Valentia 93
-
-Ciudad 23
-	Fitness 1760
-	Ciudadanos 2
-	Militar 11
-	Minas 2
-	Granjas 5
-	Valentia 43
-
-Ciudad 24
-	Fitness 8100
-	Ciudadanos 6
-	Militar 3
-	Minas 5
-	Granjas 6
-	Valentia 17
-
-Ciudad 25
-	Fitness 688
-	Ciudadanos 4
-	Militar 9
-	Minas 4
-	Granjas 3
-	Valentia 7
-
-Ciudad 26
-	Fitness 450
-	Ciudadanos 5
-	Militar 6
-	Minas 4
-	Granjas 5
-	Valentia 32
-
-Ciudad 27
-	Fitness 1072
-	Ciudadanos 5
-	Militar 8
-	Minas 4
-	Granjas 3
-	Valentia 48
-
-Ciudad 28
-	Fitness 1813
-	Ciudadanos 7
-	Militar 5
-	Minas 5
-	Granjas 3
-	Valentia 17
-
-Ciudad 29
-	Fitness 441
-	Ciudadanos 5
-	Militar 9
-	Minas 3
-	Granjas 3
-	Valentia 4
-
-Ciudad 30
-	Fitness 8397
-	Ciudadanos 7
-	Militar 3
-	Minas 6
-	Granjas 4
-	Valentia 55
-
-Ciudad 31
-	Fitness 1955
-	Ciudadanos 6
-	Militar 6
-	Minas 4
-	Granjas 4
-	Valentia 49
-
-Ciudad 32
-	Fitness 1628
-	Ciudadanos 5
-	Militar 5
-	Minas 5
-	Granjas 5
-	Valentia 88
-
-Ciudad 33
-	Fitness 9231
-	Ciudadanos 6
-	Militar 2
 	Minas 8
 	Granjas 4
-	Valentia 10
+	Valentia 5
 
-Ciudad 34
-	Fitness 373
-	Ciudadanos 5
-	Militar 6
-	Minas 4
-	Granjas 5
-	Valentia 82
-
-Ciudad 35
-	Fitness 2170
-	Ciudadanos 4
-	Militar 5
-	Minas 7
-	Granjas 4
-	Valentia 96
-
-Ciudad 36
-	Fitness 522
-	Ciudadanos 6
-	Militar 4
-	Minas 3
-	Granjas 7
-	Valentia 38
-
-Ciudad 37
-	Fitness 7468
-	Ciudadanos 2
-	Militar 2
-	Minas 8
-	Granjas 8
-	Valentia 95
-
-Ciudad 38
-	Fitness 831
-	Ciudadanos 3
-	Militar 7
-	Minas 6
-	Granjas 4
-	Valentia 23
-
-Ciudad 39
-	Fitness 850
-	Ciudadanos 3
-	Militar 6
-	Minas 8
-	Granjas 3
-	Valentia 45
-
-Ciudad 40
-	Fitness 2266
-	Ciudadanos 4
-	Militar 8
-	Minas 6
-	Granjas 2
-	Valentia 0
-
-Ciudad 41
-	Fitness 386
-	Ciudadanos 3
-	Militar 5
-	Minas 3
-	Granjas 9
-	Valentia 94
-
-Ciudad 42
-	Fitness 7125
-	Ciudadanos 6
-	Militar 2
-	Minas 6
-	Granjas 6
-	Valentia 86
-
-Ciudad 43
-	Fitness 1754
-	Ciudadanos 8
-	Militar 5
-	Minas 5
-	Granjas 2
-	Valentia 9
-
-Ciudad 44
-	Fitness 264
-	Ciudadanos 8
-	Militar 3
-	Minas 5
-	Granjas 4
-	Valentia 77
-
-Ciudad 45
-	Fitness 6440
-	Ciudadanos 6
-	Militar 0
-	Minas 8
-	Granjas 6
-	Valentia 96
-
-Ciudad 46
-	Fitness 1184
-	Ciudadanos 5
-	Militar 5
-	Minas 3
-	Granjas 7
-	Valentia 80
-
-Ciudad 47
-	Fitness 220
+Ciudad 5
+	Fitness 8925
 	Ciudadanos 6
 	Militar 7
-	Minas 4
-	Granjas 3
-	Valentia 79
-
-Ciudad 48
-	Fitness 413
-	Ciudadanos 5
-	Militar 7
-	Minas 4
-	Granjas 4
-	Valentia 1
-
-Ciudad 49
-	Fitness 1547
-	Ciudadanos 5
-	Militar 3
-	Minas 5
-	Granjas 7
-	Valentia 48
-
-Ciudad 50
-	Fitness 2644
-	Ciudadanos 6
-	Militar 4
-	Minas 5
-	Granjas 5
-	Valentia 32
-
-Ciudad 51
-	Fitness 11780
-	Ciudadanos 5
-	Militar 3
-	Minas 8
-	Granjas 4
-	Valentia 97
-
-Ciudad 52
-	Fitness 2642
-	Ciudadanos 1
-	Militar 9
-	Minas 4
-	Granjas 6
-	Valentia 67
-
-Ciudad 53
-	Fitness 1152
-	Ciudadanos 6
-	Militar 4
-	Minas 5
-	Granjas 5
-	Valentia 34
-
-Ciudad 54
-	Fitness 8340
-	Ciudadanos 4
-	Militar 4
-	Minas 6
-	Granjas 6
-	Valentia 20
-
-Ciudad 55
-	Fitness 333
-	Ciudadanos 7
-	Militar 5
 	Minas 3
-	Granjas 5
-	Valentia 49
-
-Ciudad 56
-	Fitness 13780
-	Ciudadanos 5
-	Militar 6
-	Minas 7
-	Granjas 2
-	Valentia 70
-
-Ciudad 57
-	Fitness 588
-	Ciudadanos 2
-	Militar 7
-	Minas 3
-	Granjas 8
-	Valentia 53
-
-Ciudad 58
-	Fitness 944
-	Ciudadanos 3
-	Militar 8
-	Minas 4
-	Granjas 5
+	Granjas 4
 	Valentia 81
 
-Ciudad 59
-	Fitness 5176
-	Ciudadanos 2
-	Militar 7
-	Minas 6
-	Granjas 5
-	Valentia 65
-
-Ciudad 60
-	Fitness 0
-	Ciudadanos 6
-	Militar 7
-	Minas 3
-	Granjas 4
-	Valentia 30
-
-Ciudad 61
-	Fitness 0
-	Ciudadanos 7
-	Militar 5
-	Minas 5
-	Granjas 3
-	Valentia 72
-
-Ciudad 62
-	Fitness 0
-	Ciudadanos 1
-	Militar 6
-	Minas 7
-	Granjas 6
-	Valentia 35
-
-Ciudad 63
-	Fitness 0
-	Ciudadanos 2
-	Militar 8
-	Minas 3
-	Granjas 7
-	Valentia 6
-
-Generacion 1
-Ciudad 0
-	Fitness 390
-	Ciudadanos 2
-	Militar 7
-	Minas 6
-	Granjas 5
-	Valentia 46
-
-Ciudad 1
-	Fitness 364
-	Ciudadanos 2
-	Militar 3
-	Minas 8
-	Granjas 7
-	Valentia 47
-
-Ciudad 2
-	Fitness 9210
-	Ciudadanos 5
-	Militar 8
-	Minas 3
-	Granjas 4
-	Valentia 6
-
-Ciudad 3
-	Fitness 1387
-	Ciudadanos 7
-	Militar 5
-	Minas 5
-	Granjas 3
-	Valentia 71
-
-Ciudad 4
-	Fitness 930
-	Ciudadanos 3
-	Militar 7
-	Minas 8
-	Granjas 2
-	Valentia 16
-
-Ciudad 5
-	Fitness 8027
-	Ciudadanos 7
-	Militar 6
-	Minas 4
-	Granjas 3
-	Valentia 69
-
 Ciudad 6
-	Fitness 889
-	Ciudadanos 4
-	Militar 4
-	Minas 8
-	Granjas 4
-	Valentia 63
-
-Ciudad 7
-	Fitness 569
-	Ciudadanos 6
-	Militar 2
-	Minas 8
-	Granjas 4
-	Valentia 14
-
-Ciudad 8
-	Fitness 488
-	Ciudadanos 5
-	Militar 2
-	Minas 7
-	Granjas 6
-	Valentia 38
-
-Ciudad 9
-	Fitness 3159
-	Ciudadanos 6
-	Militar 6
-	Minas 2
-	Granjas 6
-	Valentia 27
-
-Ciudad 10
-	Fitness 397
-	Ciudadanos 2
-	Militar 6
-	Minas 7
-	Granjas 5
-	Valentia 55
-
-Ciudad 11
-	Fitness 7810
-	Ciudadanos 6
-	Militar 7
-	Minas 3
-	Granjas 4
-	Valentia 78
-
-Ciudad 12
-	Fitness 1018
-	Ciudadanos 2
-	Militar 7
-	Minas 9
-	Granjas 2
-	Valentia 43
-
-Ciudad 13
-	Fitness 318
-	Ciudadanos 6
-	Militar 4
-	Minas 2
-	Granjas 8
-	Valentia 88
-
-Ciudad 14
-	Fitness 544
-	Ciudadanos 6
-	Militar 4
-	Minas 6
-	Granjas 4
-	Valentia 33
-
-Ciudad 15
-	Fitness 7560
-	Ciudadanos 8
-	Militar 5
-	Minas 4
-	Granjas 3
-	Valentia 52
-
-Ciudad 16
-	Fitness 641
-	Ciudadanos 5
-	Militar 5
-	Minas 6
-	Granjas 4
-	Valentia 56
-
-Ciudad 17
-	Fitness 7227
-	Ciudadanos 7
-	Militar 5
-	Minas 3
-	Granjas 5
-	Valentia 57
-
-Ciudad 18
-	Fitness 1121
-	Ciudadanos 4
-	Militar 6
-	Minas 2
-	Granjas 8
-	Valentia 40
-
-Ciudad 19
-	Fitness 295
-	Ciudadanos 2
-	Militar 3
-	Minas 6
-	Granjas 9
-	Valentia 92
-
-Ciudad 20
-	Fitness 505
-	Ciudadanos 2
-	Militar 4
-	Minas 4
-	Granjas 10
-	Valentia 33
-
-Ciudad 21
-	Fitness 13217
-	Ciudadanos 3
-	Militar 7
-	Minas 6
-	Granjas 4
-	Valentia 73
-
-Ciudad 22
-	Fitness 3926
-	Ciudadanos 9
-	Militar 4
-	Minas 4
-	Granjas 3
-	Valentia 53
-
-Ciudad 23
-	Fitness 535
-	Ciudadanos 7
-	Militar 5
-	Minas 5
-	Granjas 3
-	Valentia 87
-
-Ciudad 24
-	Fitness 3185
-	Ciudadanos 6
-	Militar 4
-	Minas 2
-	Granjas 8
-	Valentia 46
-
-Ciudad 25
-	Fitness 8595
-	Ciudadanos 6
-	Militar 5
-	Minas 4
-	Granjas 5
-	Valentia 59
-
-Ciudad 26
 	Fitness 564
 	Ciudadanos 8
-	Militar 3
-	Minas 3
-	Granjas 6
-	Valentia 65
-
-Ciudad 27
-	Fitness 260
-	Ciudadanos 5
-	Militar 5
-	Minas 7
-	Granjas 3
-	Valentia 95
-
-Ciudad 28
-	Fitness 1511
-	Ciudadanos 3
-	Militar 5
-	Minas 6
-	Granjas 6
-	Valentia 88
-
-Ciudad 29
-	Fitness 900
-	Ciudadanos 2
-	Militar 4
-	Minas 8
-	Granjas 6
-	Valentia 11
-
-Ciudad 30
-	Fitness 782
-	Ciudadanos 9
-	Militar 3
-	Minas 3
-	Granjas 5
-	Valentia 52
-
-Ciudad 31
-	Fitness 9115
-	Ciudadanos 6
-	Militar 7
-	Minas 4
-	Granjas 3
-	Valentia 97
-
-Ciudad 32
-	Fitness 8620
-	Ciudadanos 5
-	Militar 6
-	Minas 3
-	Granjas 6
-	Valentia 78
-
-Ciudad 33
-	Fitness 1985
-	Ciudadanos 7
-	Militar 3
-	Minas 6
-	Granjas 4
-	Valentia 46
-
-Ciudad 34
-	Fitness 3868
-	Ciudadanos 5
-	Militar 6
-	Minas 4
-	Granjas 5
-	Valentia 34
-
-Ciudad 35
-	Fitness 444
-	Ciudadanos 7
-	Militar 2
-	Minas 3
-	Granjas 8
-	Valentia 71
-
-Ciudad 36
-	Fitness 298
-	Ciudadanos 5
 	Militar 1
-	Minas 5
-	Granjas 9
-	Valentia 21
-
-Ciudad 37
-	Fitness 7526
-	Ciudadanos 10
-	Militar 4
-	Minas 4
-	Granjas 2
-	Valentia 45
-
-Ciudad 38
-	Fitness 844
-	Ciudadanos 7
-	Militar 4
-	Minas 3
-	Granjas 6
-	Valentia 95
-
-Ciudad 39
-	Fitness 1344
-	Ciudadanos 7
-	Militar 5
-	Minas 5
+	Minas 8
 	Granjas 3
-	Valentia 38
+	Valentia 25
 
-Ciudad 40
-	Fitness 8097
-	Ciudadanos 9
-	Militar 4
-	Minas 1
-	Granjas 6
-	Valentia 1
-
-Ciudad 41
-	Fitness 1633
-	Ciudadanos 6
-	Militar 5
-	Minas 4
-	Granjas 5
-	Valentia 61
-
-Ciudad 42
-	Fitness 399
+Ciudad 7
+	Fitness 2024
 	Ciudadanos 7
 	Militar 3
 	Minas 4
 	Granjas 6
 	Valentia 5
 
-Ciudad 43
-	Fitness 1853
-	Ciudadanos 8
-	Militar 4
-	Minas 4
-	Granjas 4
-	Valentia 42
-
-Ciudad 44
-	Fitness 10950
-	Ciudadanos 5
-	Militar 8
-	Minas 3
-	Granjas 4
-	Valentia 10
-
-Ciudad 45
-	Fitness 300
-	Ciudadanos 4
-	Militar 4
-	Minas 7
-	Granjas 5
-	Valentia 38
-
-Ciudad 46
-	Fitness 486
-	Ciudadanos 6
-	Militar 4
-	Minas 6
-	Granjas 4
-	Valentia 81
-
-Ciudad 47
-	Fitness 2500
-	Ciudadanos 10
-	Militar 3
-	Minas 3
-	Granjas 4
-	Valentia 81
-
-Ciudad 48
-	Fitness 865
-	Ciudadanos 4
-	Militar 7
-	Minas 6
-	Granjas 3
-	Valentia 51
-
-Ciudad 49
-	Fitness 10255
-	Ciudadanos 5
-	Militar 9
-	Minas 1
-	Granjas 5
-	Valentia 66
-
-Ciudad 50
-	Fitness 1984
-	Ciudadanos 4
-	Militar 8
-	Minas 6
-	Granjas 2
-	Valentia 23
-
-Ciudad 51
-	Fitness 648
-	Ciudadanos 7
-	Militar 2
-	Minas 2
-	Granjas 9
-	Valentia 15
-
-Ciudad 52
-	Fitness 4476
-	Ciudadanos 4
-	Militar 4
-	Minas 9
-	Granjas 3
-	Valentia 59
-
-Ciudad 53
-	Fitness 2549
-	Ciudadanos 4
-	Militar 4
-	Minas 7
-	Granjas 5
-	Valentia 61
-
-Ciudad 54
-	Fitness 13561
+Ciudad 8
+	Fitness 260
 	Ciudadanos 2
-	Militar 5
+	Militar 4
 	Minas 7
-	Granjas 6
-	Valentia 22
+	Granjas 7
+	Valentia 90
 
-Ciudad 55
-	Fitness 915
+Ciudad 9
+	Fitness 8515
 	Ciudadanos 6
-	Militar 3
+	Militar 6
 	Minas 3
-	Granjas 8
+	Granjas 5
 	Valentia 43
 
-Ciudad 56
-	Fitness 2372
+Ciudad 10
+	Fitness 467
 	Ciudadanos 3
 	Militar 4
-	Minas 8
+	Minas 6
+	Granjas 7
+	Valentia 14
+
+Ciudad 11
+	Fitness 1683
+	Ciudadanos 8
+	Militar 5
+	Minas 2
 	Granjas 5
-	Valentia 74
+	Valentia 67
 
-Ciudad 57
-	Fitness 935
-	Ciudadanos 3
-	Militar 3
-	Minas 10
-	Granjas 4
-	Valentia 16
-
-Ciudad 58
-	Fitness 9630
+Ciudad 12
+	Fitness 6434
 	Ciudadanos 4
-	Militar 4
-	Minas 7
-	Granjas 5
-	Valentia 75
+	Militar 5
+	Minas 8
+	Granjas 3
+	Valentia 3
 
-Ciudad 59
-	Fitness 741
+Ciudad 13
+	Fitness 759
 	Ciudadanos 5
 	Militar 2
-	Minas 9
-	Granjas 4
-	Valentia 7
+	Minas 7
+	Granjas 6
+	Valentia 58
 
-Ciudad 60
-	Fitness 0
-	Ciudadanos 6
-	Militar 5
-	Minas 6
+Ciudad 14
+	Fitness 733
+	Ciudadanos 4
+	Militar 3
+	Minas 10
 	Granjas 3
-	Valentia 57
+	Valentia 78
 
-Ciudad 61
-	Fitness 0
+Ciudad 15
+	Fitness 12556
+	Ciudadanos 2
+	Militar 9
+	Minas 3
+	Granjas 6
+	Valentia 61
+
+Ciudad 16
+	Fitness 1122
+	Ciudadanos 4
+	Militar 5
+	Minas 4
+	Granjas 7
+	Valentia 94
+
+Ciudad 17
+	Fitness 352
+	Ciudadanos 3
+	Militar 3
+	Minas 8
+	Granjas 6
+	Valentia 90
+
+Ciudad 18
+	Fitness 1697
+	Ciudadanos 5
+	Militar 6
+	Minas 4
+	Granjas 5
+	Valentia 45
+
+Ciudad 19
+	Fitness 7850
+	Ciudadanos 6
+	Militar 7
+	Minas 3
+	Granjas 4
+	Valentia 5
+
+Ciudad 20
+	Fitness 795
+	Ciudadanos 7
+	Militar 4
+	Minas 5
+	Granjas 4
+	Valentia 21
+
+Ciudad 21
+	Fitness 7247
+	Ciudadanos 9
+	Militar 4
+	Minas 4
+	Granjas 3
+	Valentia 17
+
+Ciudad 22
+	Fitness 285
+	Ciudadanos 1
+	Militar 5
+	Minas 4
+	Granjas 10
+	Valentia 31
+
+Ciudad 23
+	Fitness 237
+	Ciudadanos 4
+	Militar 3
+	Minas 4
+	Granjas 9
+	Valentia 93
+
+Ciudad 24
+	Fitness 495
+	Ciudadanos 7
+	Militar 2
+	Minas 6
+	Granjas 5
+	Valentia 94
+
+Ciudad 25
+	Fitness 10665
+	Ciudadanos 4
+	Militar 8
+	Minas 2
+	Granjas 6
+	Valentia 23
+
+Ciudad 26
+	Fitness 2233
+	Ciudadanos 6
+	Militar 4
+	Minas 7
+	Granjas 3
+	Valentia 84
+
+Ciudad 27
+	Fitness 2299
+	Ciudadanos 4
+	Militar 8
+	Minas 3
+	Granjas 5
+	Valentia 80
+
+Ciudad 28
+	Fitness 7985
 	Ciudadanos 8
 	Militar 5
 	Minas 4
 	Granjas 3
-	Valentia 21
+	Valentia 39
 
-Ciudad 62
-	Fitness 0
-	Ciudadanos 4
-	Militar 7
+Ciudad 29
+	Fitness 601
+	Ciudadanos 3
+	Militar 6
 	Minas 5
-	Granjas 4
-	Valentia 51
+	Granjas 6
+	Valentia 32
 
-Ciudad 63
-	Fitness 0
-	Ciudadanos 4
+Ciudad 30
+	Fitness 278
+	Ciudadanos 6
 	Militar 3
 	Minas 5
+	Granjas 6
+	Valentia 98
+
+Ciudad 31
+	Fitness 1306
+	Ciudadanos 6
+	Militar 5
+	Minas 5
+	Granjas 4
+	Valentia 61
+
+Ciudad 32
+	Fitness 7302
+	Ciudadanos 9
+	Militar 5
+	Minas 4
+	Granjas 2
+	Valentia 90
+
+Ciudad 33
+	Fitness 520
+	Ciudadanos 5
+	Militar 5
+	Minas 4
+	Granjas 6
+	Valentia 72
+
+Ciudad 34
+	Fitness 607
+	Ciudadanos 5
+	Militar 6
+	Minas 5
+	Granjas 4
+	Valentia 68
+
+Ciudad 35
+	Fitness 349
+	Ciudadanos 3
+	Militar 2
+	Minas 9
+	Granjas 6
+	Valentia 57
+
+Ciudad 36
+	Fitness 6758
+	Ciudadanos 6
+	Militar 4
+	Minas 6
+	Granjas 4
+	Valentia 36
+
+Ciudad 37
+	Fitness 1219
+	Ciudadanos 8
+	Militar 3
+	Minas 5
+	Granjas 4
+	Valentia 58
+
+Ciudad 38
+	Fitness 1802
+	Ciudadanos 5
+	Militar 4
+	Minas 7
+	Granjas 4
+	Valentia 23
+
+Ciudad 39
+	Fitness 20375
+	Ciudadanos 1
+	Militar 9
+	Minas 7
+	Granjas 3
+	Valentia 5
+
+Ciudad 40
+	Fitness 517
+	Ciudadanos 4
+	Militar 4
+	Minas 5
+	Granjas 7
+	Valentia 98
+
+Ciudad 41
+	Fitness 571
+	Ciudadanos 5
+	Militar 4
+	Minas 4
+	Granjas 7
+	Valentia 94
+
+Ciudad 42
+	Fitness 4498
+	Ciudadanos 2
+	Militar 5
+	Minas 10
+	Granjas 3
+	Valentia 41
+
+Ciudad 43
+	Fitness 9402
+	Ciudadanos 3
+	Militar 6
+	Minas 7
+	Granjas 4
+	Valentia 48
+
+Ciudad 44
+	Fitness 667
+	Ciudadanos 7
+	Militar 5
+	Minas 4
+	Granjas 4
+	Valentia 60
+
+Ciudad 45
+	Fitness 15772
+	Ciudadanos 3
+	Militar 8
+	Minas 3
+	Granjas 6
+	Valentia 81
+
+Ciudad 46
+	Fitness 934
+	Ciudadanos 4
+	Militar 7
+	Minas 6
+	Granjas 3
+	Valentia 2
+
+Ciudad 47
+	Fitness 3133
+	Ciudadanos 5
+	Militar 7
+	Minas 4
+	Granjas 4
+	Valentia 97
+
+Ciudad 48
+	Fitness 1012
+	Ciudadanos 3
+	Militar 6
+	Minas 6
+	Granjas 5
+	Valentia 63
+
+Ciudad 49
+	Fitness 8330
+	Ciudadanos 5
+	Militar 6
+	Minas 5
+	Granjas 4
+	Valentia 86
+
+Ciudad 50
+	Fitness 1489
+	Ciudadanos 6
+	Militar 4
+	Minas 7
+	Granjas 3
+	Valentia 33
+
+Ciudad 51
+	Fitness 322
+	Ciudadanos 1
+	Militar 3
+	Minas 6
+	Granjas 10
+	Valentia 43
+
+Ciudad 52
+	Fitness 5090
+	Ciudadanos 5
+	Militar 5
+	Minas 5
+	Granjas 5
+	Valentia 17
+
+Ciudad 53
+	Fitness 9635
+	Ciudadanos 4
+	Militar 8
+	Minas 2
+	Granjas 6
+	Valentia 31
+
+Ciudad 54
+	Fitness 489
+	Ciudadanos 5
+	Militar 4
+	Minas 8
+	Granjas 3
+	Valentia 63
+
+Ciudad 55
+	Fitness 1641
+	Ciudadanos 7
+	Militar 4
+	Minas 3
+	Granjas 6
+	Valentia 64
+
+Ciudad 56
+	Fitness 8097
+	Ciudadanos 3
+	Militar 7
+	Minas 7
+	Granjas 3
+	Valentia 63
+
+Ciudad 57
+	Fitness 2053
+	Ciudadanos 1
+	Militar 7
+	Minas 6
+	Granjas 6
+	Valentia 23
+
+Ciudad 58
+	Fitness 2134
+	Ciudadanos 3
+	Militar 5
+	Minas 7
+	Granjas 5
+	Valentia 56
+
+Ciudad 59
+	Fitness 689
+	Ciudadanos 3
+	Militar 4
+	Minas 7
+	Granjas 6
+	Valentia 42
+
+Ciudad 60
+	Fitness 917
+	Ciudadanos 6
+	Militar 6
+	Minas 2
+	Granjas 6
+	Valentia 6
+
+Ciudad 61
+	Fitness 1678
+	Ciudadanos 5
+	Militar 6
+	Minas 1
 	Granjas 8
-	Valentia 79
+	Valentia 40
+
+Ciudad 62
+	Fitness 8370
+	Ciudadanos 6
+	Militar 7
+	Minas 3
+	Granjas 4
+	Valentia 93
+
+Ciudad 63
+	Fitness 328
+	Ciudadanos 2
+	Militar 6
+	Minas 6
+	Granjas 6
+	Valentia 32
 

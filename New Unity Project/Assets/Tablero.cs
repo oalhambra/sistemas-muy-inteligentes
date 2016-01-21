@@ -25,7 +25,7 @@ public class Tablero {
 
     public void setExito(bool exito) {
         this.exito = exito;
-        
+
     }
 
 

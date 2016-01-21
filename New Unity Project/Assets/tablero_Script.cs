@@ -30,12 +30,9 @@ public class tablero_Script : MonoBehaviour {
         for (int i = 0; i < arr_ciudades.Length; i++) {
             arr_ciudades[i] = new Ciudad();
         }
-
-        combate = new Combate(arr_ciudades[0], arr_ciudades[1], arr_ciudades[2], arr_ciudades[3]);
-        numCombate = 1;
-        estado = 1;
+        numCombate = 0;
+        estado = 2;
         graficosIni();
-        actualizarGraficos();
 
     }
 
@@ -60,15 +57,21 @@ public class tablero_Script : MonoBehaviour {
             //despejar el tablero
             //Debug.Log("estado 2");
             //graficosIni();
-            combate = new Combate(arr_ciudades[4 * numCombate], arr_ciudades[4 * numCombate + 1], arr_ciudades[4 * numCombate + 2], arr_ciudades[4 * numCombate + 3]);
-            numCombate++;
-            if (numCombate == 64 / 4) {
+
+
+            Debug.Log("el numero del combate es: " + numCombate);
+            if (numCombate > 15) {
+                //reproduce
                 estado = 3;
                 numGeneracion++;
                 numCombate = 0;
             }
             else {
+                //combaten
+                combate = new Combate(arr_ciudades[4 * numCombate], arr_ciudades[4 * numCombate + 1], arr_ciudades[4 * numCombate + 2], arr_ciudades[4 * numCombate + 3]);
+
                 estado = 1;
+                numCombate++;
             }
 
 
@@ -174,8 +177,10 @@ public class tablero_Script : MonoBehaviour {
 
     }
     private void writeFile(int numGeneracion) {
+        Debug.Log("Se ha llamado a writefile con el array de long " + arr_ciudades.Length);
         using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(@".\generacion_" + numGeneracion + ".txt", true)) {
+            
             file.WriteLine("Generacion " + numGeneracion);
             for (int i = 0; i < arr_ciudades.Length; i++) {
                 file.WriteLine("Ciudad " + i);
@@ -187,6 +192,8 @@ public class tablero_Script : MonoBehaviour {
                 file.WriteLine("\tValentia " + arr_ciudades[i].getValentia());
                 file.WriteLine();
             }
+            file.Flush();
+            file.Close();
         }
     }
     private Ciudad[] randomizar(Ciudad[] arrCiudades) {
