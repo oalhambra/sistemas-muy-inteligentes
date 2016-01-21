@@ -21,7 +21,7 @@ public class tablero_Script : MonoBehaviour {
     private GameObject ciudad;
     private int estado;
     private int numCombate;
-    private int numGeneracion=0;
+    private int numGeneracion = 0;
 
     void Start() {
         //inicializacion de las variables
@@ -48,10 +48,9 @@ public class tablero_Script : MonoBehaviour {
 
             //ejecutarCombate nos devuelve true si solo queda una ciudad viva
             combate.ejecutarCombate();
-            if (combate.combateTerminado())
-            {
+            if (combate.combateTerminado()) {
                 estado = 2;
-                
+
             }
             //Debug.Log("hola holita");
             //estado = 3;
@@ -61,16 +60,14 @@ public class tablero_Script : MonoBehaviour {
             //despejar el tablero
             //Debug.Log("estado 2");
             //graficosIni();
-            combate = new Combate(arr_ciudades[4*numCombate], arr_ciudades[4 * numCombate+1], arr_ciudades[4 * numCombate+2], arr_ciudades[4 * numCombate+3]);
+            combate = new Combate(arr_ciudades[4 * numCombate], arr_ciudades[4 * numCombate + 1], arr_ciudades[4 * numCombate + 2], arr_ciudades[4 * numCombate + 3]);
             numCombate++;
-            if (numCombate == 64 / 4)
-            {
+            if (numCombate == 64 / 4) {
                 estado = 3;
                 numGeneracion++;
                 numCombate = 0;
             }
-            else
-            {
+            else {
                 estado = 1;
             }
 
@@ -82,37 +79,32 @@ public class tablero_Script : MonoBehaviour {
             Debug.Log("toca reproducir");
             writeFile(numGeneracion);
             //ejecutar reproduccion
-            arr_ciudades=Ciudad.ordenaArrCiudades(arr_ciudades);
+            arr_ciudades = Ciudad.ordenaArrCiudades(arr_ciudades);
             int[] fitnessAcumulado = new int[64];
             fitnessAcumulado[0] = arr_ciudades[0].getFitness();
-            for(int i = 1; i < 64; i++)
-            {
-                fitnessAcumulado[i] = arr_ciudades[i].getFitness() + fitnessAcumulado[i-1];
+            for (int i = 1; i < 64; i++) {
+                fitnessAcumulado[i] = arr_ciudades[i].getFitness() + fitnessAcumulado[i - 1];
             }
             Ciudad[] nuevasCiudades = new Ciudad[16];
             int j;
             int k;
-            for(int i = 0; i < 16; i++)
-            {
-                int valRandom=Random.Range(0, fitnessAcumulado[63]);
+            for (int i = 0; i < 16; i++) {
+                int valRandom = Random.Range(0, fitnessAcumulado[63]);
                 Debug.Log(valRandom);
                 j = 0;
-                while (valRandom > fitnessAcumulado[j] && j < 64)
-                {
+                while (valRandom > fitnessAcumulado[j] && j < 64) {
                     j++;
                 }
                 k = 0;
-                while (valRandom > fitnessAcumulado[k] && k < 64)
-                {
+                while (valRandom > fitnessAcumulado[k] && k < 64) {
                     k++;
                 }
                 nuevasCiudades[i] = arr_ciudades[j].reproducir(arr_ciudades[k]);
             }
-            for(int i = 0; i < 16; i++)
-            {
+            for (int i = 0; i < 16; i++) {
                 arr_ciudades[i + 48] = nuevasCiudades[i];
             }
-            arr_ciudades=randomizar(arr_ciudades);
+            arr_ciudades = randomizar(arr_ciudades);
             estado = 1;
             Debug.Log("acaba una generacion");
 
@@ -179,16 +171,13 @@ public class tablero_Script : MonoBehaviour {
         }
 
         tableroGrafico[i, j].GetComponent<Renderer>().material.color = color;
- 
+
     }
-    private void writeFile(int numGeneracion)
-    {
+    private void writeFile(int numGeneracion) {
         using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@".\generacion_"+numGeneracion+".txt", true))
-        {
-            file.WriteLine("Generacion "+ numGeneracion);
-            for(int i = 0; i < arr_ciudades.Length; i++)
-            {
+            new System.IO.StreamWriter(@".\generacion_" + numGeneracion + ".txt", true)) {
+            file.WriteLine("Generacion " + numGeneracion);
+            for (int i = 0; i < arr_ciudades.Length; i++) {
                 file.WriteLine("Ciudad " + i);
                 file.WriteLine("\tFitness " + arr_ciudades[i].getFitness());
                 file.WriteLine("\tCiudadanos " + arr_ciudades[i].getCiudadanos());
@@ -200,20 +189,17 @@ public class tablero_Script : MonoBehaviour {
             }
         }
     }
-    private Ciudad[] randomizar(Ciudad[] arrCiudades)
-    {
+    private Ciudad[] randomizar(Ciudad[] arrCiudades) {
         Ciudad[] resultado = new Ciudad[arrCiudades.Length];
-        for(int i = 0; i < resultado.Length; i++)
-        {
+        for (int i = 0; i < resultado.Length; i++) {
             int valRandom = Random.Range(0, resultado.Length - i);
             resultado[i] = arrCiudades[valRandom];
-            for(int j = valRandom; j < arrCiudades.Length-1; j++)
-            {
+            for (int j = valRandom; j < arrCiudades.Length - 1; j++) {
                 arrCiudades[j] = arrCiudades[j + 1];
             }
         }
         return resultado;
     }
-       
+
 
 }

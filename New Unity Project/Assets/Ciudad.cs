@@ -11,8 +11,10 @@ public class Ciudad {
 
     int valentia;
 
-    int poblacion;
-    int ejercito;
+    float poblacion;
+    float ejercito;
+    public float bonusPoblacion = 0;
+    public float bonusEjercito = 0;
     int fitness;
 
     int tamaño;
@@ -75,19 +77,19 @@ public class Ciudad {
         data[n] = temporary;
     }
     
-    public int getPoblacion() {
+    public float getPoblacion() {
         return poblacion;
     }
-    public int getEjercito() {
+    public float getEjercito() {
         return ejercito;
     }
     public int getTamaño() {
         return tamaño;
     }
-    public void setPoblacion(int poblacion) {
+    public void setPoblacion(float poblacion) {
         this.poblacion = poblacion;
     }
-    public void setEjercito(int ejercito) {
+    public void setEjercito(float ejercito) {
         this.ejercito = ejercito;
     }
     public void setTamaño(int tamaño) {
@@ -157,7 +159,7 @@ public class Ciudad {
                         break;
                 }
 
-                if (this.tamaño + this.ejercito > ciudadAtacada.tamaño + ciudadAtacada.ejercito) {
+                if (this.calcularValorDeAtaque() > ciudadAtacada.calcularValorDeAtaque()) {
                     //ganamos nosotros
                     tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()] = this.color;
                     ciudadAtacada.tamaño--;
@@ -222,7 +224,7 @@ public class Ciudad {
                         break;
                 }
 
-                if (this.tamaño + this.ejercito > ciudadAtacada.tamaño + ciudadAtacada.ejercito) {
+                if (this.calcularValorDeAtaque() > ciudadAtacada.calcularValorDeAtaque()) {
                     //ganamos nosotros
                     tablero.getTablero()[posExpansion.getI(), posExpansion.getJ()] = this.color;
                     ciudadAtacada.setPoblacion(ciudadAtacada.getPoblacion() - 5);
@@ -339,5 +341,8 @@ public class Ciudad {
     public void setFitness(int fitness) {
         this.fitness = fitness;
     }
-    
+    public float calcularValorDeAtaque() {
+        return tamaño + ejercito;
+    }
+
 }

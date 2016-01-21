@@ -18,16 +18,15 @@ public class Combate {
         if (ciudad.getTamaño() > 0) {
             //incrementa valores de la ciudad
             ciudad.setFitness(ciudad.getFitness() + 1);
-            int poblacionAntigua = ciudad.getPoblacion();
+            float poblacionAntigua = ciudad.getPoblacion();
 
-            ciudad.setEjercito(ciudad.getEjercito() + ciudad.getMinas() * 6);
-            ciudad.setPoblacion(ciudad.getPoblacion() + ciudad.getGranjas() * 5);
-            Debug.Log("Se ha aumentado la poblacion en " + ciudad.getPoblacion());
+            ciudad.bonusEjercito += ciudad.getMinas() * 3 / 100;
+            ciudad.bonusPoblacion += ciudad.getGranjas() * 3 / 100;
 
-            ciudad.setPoblacion(ciudad.getPoblacion() + 1 + ciudad.getCiudadanos());
-            ciudad.setEjercito(ciudad.getEjercito() + 1 + ciudad.getMilitar());
+            ciudad.setPoblacion(ciudad.getPoblacion() + 1 + ciudad.getCiudadanos() * 3 + ciudad.bonusPoblacion);
+            ciudad.setEjercito(ciudad.getEjercito() + 1 + ciudad.getMilitar() * 3 + ciudad.bonusEjercito);
             //comprueba expansion
-            int num_veces = ((poblacionAntigua % 5) + ciudad.getPoblacion() - poblacionAntigua) / 5;
+            int num_veces = (int)((poblacionAntigua % 5) + ciudad.getPoblacion() - poblacionAntigua) / 5;
             for (int i = 0; i < num_veces; i++) {
                 //Debug.Log("Se ha llamado a ciudad.expandir, el numero de poblacion ha aumentado " + num_veces + " veces");
                 tablero.setExito(ciudad.expandir(this.tablero));
@@ -36,9 +35,6 @@ public class Combate {
                 }
                 //tablero.setTablero(aux.getTablero());
             }
-
-
-
         }
         return ciudad;
 
@@ -57,7 +53,5 @@ public class Combate {
         }
         return resultado;
     }
-
-
 
 }
