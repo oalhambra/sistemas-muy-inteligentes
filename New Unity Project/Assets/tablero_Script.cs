@@ -14,7 +14,7 @@ public class tablero_Script : MonoBehaviour {
     public Combate combate;
 
 
-    //tablero = 0 -> vacio 
+    //tablero = 0 -> vacio
 
     GameObject[,] tableroGrafico = new GameObject[Constants.TAMAÑO, Constants.TAMAÑO];
     [SerializeField]
@@ -80,7 +80,7 @@ public class tablero_Script : MonoBehaviour {
         if (estado == 3) {
             //seleccionar pareja a reproducir en funcion de fitness
             Debug.Log("toca reproducir");
-            
+
             //ejecutar reproduccion
             arr_ciudades = Ciudad.ordenaArrCiudades(arr_ciudades);
             writeFile(numGeneracion);
@@ -100,9 +100,24 @@ public class tablero_Script : MonoBehaviour {
                     j++;
                 }
                 k = 0;
-                while (valRandom > fitnessAcumulado[k] && k < 64) {
-                    k++;
+                int valRandom2 = Random.Range(0, fitnessAcumulado[63]);
+                bool quedate = true;
+                while (quedate){
+                    while (valRandom2 > fitnessAcumulado[k] && k < 64)
+                    {
+                        k++;
+                    }
+                    if (k != j){
+
+                        quedate = false;
+                    }
+                    else
+                    {
+                        valRandom2 = Random.Range(0, fitnessAcumulado[63]);
+                    }
+
                 }
+                
                 nuevasCiudades[i] = arr_ciudades[j].reproducir(arr_ciudades[k], numGeneracion);
             }
             for (int i = 0; i < 16; i++) {
@@ -181,7 +196,7 @@ public class tablero_Script : MonoBehaviour {
         Debug.Log("Se ha llamado a writefile con el array de long " + arr_ciudades.Length);
         using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(@".\generacion_" + numGeneracion + ".txt", true)) {
-            
+
             file.WriteLine("Generacion " + numGeneracion);
             for (int i = 0; i < arr_ciudades.Length; i++) {
                 file.WriteLine("Ciudad " + i);
